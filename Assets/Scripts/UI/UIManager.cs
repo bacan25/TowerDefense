@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 /// <summary>
 /// Actualiza la interfaz de usuario en base a eventos del juego.
 /// </summary>
 public class UIManager : MonoBehaviour 
 {
-    [SerializeField] Text oroTexto;
-    [SerializeField] Text vidaTexto;
+    [SerializeField] TextMeshProUGUI oroTexto;
+    [SerializeField] TextMeshProUGUI vidaTexto;
 
     void OnEnable()
     {
@@ -28,6 +30,6 @@ public class UIManager : MonoBehaviour
 
     void ActualizarVidaUI(int vida)
     {
-        vidaTexto.text = $"Núcleo: {vida}";
+        vidaTexto.text = $"Núcleo: {vida}%";
     }
 }

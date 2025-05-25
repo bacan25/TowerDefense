@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 130344266}
   bulletPool: {fileID: 711305071}
-  fireRate: 0.4
+  fireRate: 0.5
   bulletDmg: 10
   anim: {fileID: 1388160725}
 --- !u!1 &1393870510

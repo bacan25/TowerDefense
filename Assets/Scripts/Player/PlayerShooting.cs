@@ -8,16 +8,36 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField]private float fireRate = 0.2f;
     [SerializeField]private int bulletDmg = 10;
     private float lastShotTime = 0f;
+    bool canAttack = true;
+
+    [Header("Animator")]
+    public Animator anim;
 
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time - lastShotTime > fireRate)
+        if(canAttack)
         {
-            lastShotTime = Time.time;
-            GameObject bullet = bulletPool.GetBullet(bulletDmg);
-            bullet.transform.position = firePoint.position;
-            bullet.transform.rotation = firePoint.rotation;
-            bullet.SetActive(true);
+            if (Input.GetButton("Fire1") && Time.time - lastShotTime > fireRate)
+            {
+                anim.SetTrigger("Shoot");
+                canAttack = false;
+                Invoke("ResetAttck", fireRate);
+            }
         }
+        
+    }
+
+    public void Shoot()
+    {
+        lastShotTime = Time.time;
+        GameObject bullet = bulletPool.GetBullet(bulletDmg);
+        bullet.transform.position = firePoint.position;
+        bullet.transform.rotation = firePoint.rotation;
+        bullet.SetActive(true);
+    }
+
+    void ResetAttck()
+    {
+        canAttack = true;
     }
 }

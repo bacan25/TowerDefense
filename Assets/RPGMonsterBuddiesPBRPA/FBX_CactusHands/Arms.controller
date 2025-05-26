@@ -60,7 +60,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shoot
-  m_Speed: 2.5
+  m_Speed: 2.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8674795464855673794}
@@ -121,7 +121,7 @@ AnimatorStateMachine:
     m_Position: {x: 464.12454, y: 86.37374, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1079649542942684253}
-    m_Position: {x: 460, y: 210, z: 0}
+    m_Position: {x: 470, y: 220, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

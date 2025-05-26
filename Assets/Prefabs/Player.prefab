@@ -183,8 +183,8 @@ GameObject:
   - component: {fileID: 5674144489755890815}
   - component: {fileID: 500241136564862025}
   - component: {fileID: 8366119773875523403}
-  - component: {fileID: 6445758669916265992}
   - component: {fileID: 6021598223767165952}
+  - component: {fileID: 4467210699247997646}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -282,34 +282,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 2.2137997
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!143 &6445758669916265992
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5780038469671311071}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.10689986, z: 0}
 --- !u!114 &6021598223767165952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,9 +297,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c43ca1bd95fabf45b1ff3671b071a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  lookSpeed: 2
+  moveSpeed: 10
+  lookSpeed: 3
   cameraTransform: {fileID: 3213640591731056472}
+--- !u!54 &4467210699247997646
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5780038469671311071}
+  serializedVersion: 4
+  m_Mass: 8
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &7051134125879528137
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 8306372351005463735}
   bulletPool: {fileID: 0}
-  fireRate: 0.5
+  fireRate: 0.4
   bulletDmg: 10
   anim: {fileID: 7027925435923278075}
 --- !u!4 &6513052180659924179 stripped

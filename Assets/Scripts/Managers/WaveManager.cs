@@ -20,6 +20,8 @@ public class WaveManager : MonoBehaviour
     [Tooltip("Puntos de spawn para los enemigos.")]
     public Transform[] spawnPoints;
 
+    [SerializeField]private Transform enemiesContainer;
+
     private int indiceOleadaActual = 0;
 
     void Awake()
@@ -44,7 +46,7 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i < oleada.cantidad; i++)
         {
             Transform spawn = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(oleada.prefabEnemigo, spawn.position, spawn.rotation);
+            Instantiate(oleada.prefabEnemigo, spawn.position, spawn.rotation,enemiesContainer);
             yield return new WaitForSeconds(oleada.intervalo);
         }
 

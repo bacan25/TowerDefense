@@ -1,4 +1,6 @@
 using UnityEngine;
+using Player;
+
 
 public class PlayerShooting : MonoBehaviour
 {

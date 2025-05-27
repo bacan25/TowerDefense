@@ -15,11 +15,15 @@ public class Enemy : MonoBehaviour
     [Tooltip("Oro que otorga al morir.")]
     public int recompensaOro = 10;
 
+    private bool isDead = false;
+
     private int saludActual;
     /// <summary>
     /// Salud actual del enemigo (solo lectura).
     /// </summary>
     public int Salud => saludActual;
+
+    [SerializeField]private Animator anim;
 
     /// <summary>
     /// Estrategia de movimiento (puede asignarse dinámicamente).
@@ -45,19 +49,22 @@ public class Enemy : MonoBehaviour
 
     void MoverPorDefecto()
     {
-        if (objetivoActualDelCamino == null) return;
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            objetivoActualDelCamino.position,
-            velocidad * Time.deltaTime
-        );
-
-        if (Vector3.Distance(transform.position, objetivoActualDelCamino.position) < 0.1f)
+        if(!isDead)
         {
-            indiceWaypoint++;
-            objetivoActualDelCamino = PathManager.Instance.GetWaypoint(indiceWaypoint);
-            if (objetivoActualDelCamino == null)
-                LlegarAlNucleo();
+            if (objetivoActualDelCamino == null) return;
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                objetivoActualDelCamino.position,
+                velocidad * Time.deltaTime
+            );
+
+            if (Vector3.Distance(transform.position, objetivoActualDelCamino.position) < 0.1f)
+            {
+                indiceWaypoint++;
+                objetivoActualDelCamino = PathManager.Instance.GetWaypoint(indiceWaypoint);
+                if (objetivoActualDelCamino == null)
+                    LlegarAlNucleo();
+            }
         }
     }
 
@@ -79,6 +86,9 @@ public class Enemy : MonoBehaviour
     {
         if (!alcanzóNucleo)
             GameManager.Instance.RecompensaPorEnemigo(recompensaOro);
-        Destroy(gameObject);
+
+        isDead = true;
+        anim.SetBool("isDead", isDead);
+        Destroy(gameObject, 3f);
     }
 }

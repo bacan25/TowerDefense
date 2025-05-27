@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     [Header("Fases")]
     public bool FaseConstruccion { get; private set; } = true;
 
+    public static event Action<bool> OnFaseConstruccionChanged;
+
     /// <summary>
     /// Evento Observer para cambios en el oro.
     /// </summary>
@@ -57,6 +59,8 @@ public class GameManager : MonoBehaviour
         FaseConstruccion = true;
         CameraIso.SetActive(true);
         CameraFPS.SetActive(false);
+        UIManager.Instance.ShowIsoHUD();
+        OnFaseConstruccionChanged?.Invoke(true);
     }
 
     /// <summary>
@@ -67,6 +71,8 @@ public class GameManager : MonoBehaviour
         FaseConstruccion = false;
         CameraIso.SetActive(false);
         CameraFPS.SetActive(true);
+        UIManager.Instance.ShowFPSHUD();
+        OnFaseConstruccionChanged?.Invoke(false);
         WaveManager.Instance.ComenzarOleada();
     }
 

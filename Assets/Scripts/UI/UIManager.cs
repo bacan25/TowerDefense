@@ -1,35 +1,91 @@
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-
-/// <summary>
-/// Actualiza la interfaz de usuario en base a eventos del juego.
-/// </summary>
-public class UIManager : MonoBehaviour 
+public class UIManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI oroTexto;
-    [SerializeField] TextMeshProUGUI vidaTexto;
+    public static UIManager Instance { get; private set; }
+
+    [Header("Canvases")]
+    [SerializeField] private GameObject canvasFPS;
+    [SerializeField] private GameObject canvasIso;
+
+    [Header("HUD FPS Elements")]
+    [SerializeField] private TextMeshProUGUI fpsVidaText;
+    [SerializeField] private TextMeshProUGUI fpsRondaText;
+    [SerializeField] private TextMeshProUGUI fpsMinionsText;
+    [SerializeField] private TextMeshProUGUI fpsOroText;
+
+    [Header("HUD Isométrico Elements")]
+    [SerializeField] private TextMeshProUGUI isoOroText;
+
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+    void Start()
+    {
+        // Inicializamos mostrando la fase de preparación
+        ShowIsoHUD();
+        // Disparamos los valores iniciales
+        UpdateOro(GameManager.Instance.Oro);
+        UpdateVida(CoreHealth.Instance.VidaActual);
+        // Minions y ronda se actualizarán cuando comiencen oleadas
+    }
 
     void OnEnable()
     {
-        GameManager.OnOroCambiado += ActualizarOroUI;
-        CoreHealth.OnVidaNucleoCambiada += ActualizarVidaUI;
+        GameManager.OnOroCambiado               += UpdateOro;
+        CoreHealth.OnVidaNucleoCambiada        += UpdateVida;
+        WaveManager.OnMinionsRemainingChanged   += UpdateMinions;
+        WaveManager.OnRondaCambiada            += UpdateRonda;
     }
 
     void OnDisable()
     {
-        GameManager.OnOroCambiado -= ActualizarOroUI;
-        CoreHealth.OnVidaNucleoCambiada -= ActualizarVidaUI;
+        GameManager.OnOroCambiado               -= UpdateOro;
+        CoreHealth.OnVidaNucleoCambiada        -= UpdateVida;
+        WaveManager.OnMinionsRemainingChanged   -= UpdateMinions;
+        WaveManager.OnRondaCambiada            -= UpdateRonda;
     }
 
-    void ActualizarOroUI(int nuevoOro)
+    // Actualizadores:
+    private void UpdateOro(int oro)
     {
-        oroTexto.text = $"Oro: {nuevoOro}";
+        fpsOroText.text = $"Oro: {oro}";
+        isoOroText.text = $"Oro: {oro}";
     }
 
-    void ActualizarVidaUI(int vida)
+    private void UpdateVida(int vida)
     {
-        vidaTexto.text = $"Núcleo: {vida}%";
+        fpsVidaText.text = $"Vida: {vida}%";
+    }
+
+    private void UpdateMinions(int quedan)
+    {
+        fpsMinionsText.text = $"Minions: {quedan}";
+    }
+
+    private void UpdateRonda(int ronda)
+    {
+        // Asumimos rondas 1-based en UI
+        fpsRondaText.text = $"Ronda: {ronda + 1}";
+    }
+
+    // Métodos para cambiar de HUD:
+    public void ShowFPSHUD()
+    {
+        canvasFPS.SetActive(true);
+        canvasIso.SetActive(false);
+    }
+
+    public void ShowIsoHUD()
+    {
+        canvasIso.SetActive(true);
+        canvasFPS.SetActive(false);
     }
 }

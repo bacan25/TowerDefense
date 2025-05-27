@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b7c58be858a07324ab58829a616de884, type: 2}
     - target: {fileID: 919132149155446097, guid: 0ccd8b17174703a45bb29e258312e4eb, type: 3}
       propertyPath: m_Name
-      value: Golem
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1538926046883321437, guid: 0ccd8b17174703a45bb29e258312e4eb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -218,3 +218,4 @@ MonoBehaviour:
   saludMax: 20
   "da\xF1oAlNucleo": 5
   recompensaOro: 10
+  anim: {fileID: 2232650656145022614}

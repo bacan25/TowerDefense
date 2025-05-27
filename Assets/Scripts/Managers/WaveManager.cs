@@ -11,8 +11,8 @@ public class WaveManager : MonoBehaviour
     [System.Serializable]
     public class Oleada {
         public GameObject prefabEnemigo;
-        public int cantidad;
-        public float intervalo;
+        public int cantidad = 35;
+        public float intervalo = 1f;
     }
 
     [Tooltip("Configuración de cada oleada.")]
@@ -42,6 +42,11 @@ public class WaveManager : MonoBehaviour
     {
         if (indiceOleadaActual >= oleadas.Length) yield break;
         Oleada oleada = oleadas[indiceOleadaActual];
+
+        if(indiceOleadaActual != 0)
+        {
+            oleada.prefabEnemigo.GetComponent<Enemy>().saludMax += indiceOleadaActual * 2;
+        }
 
         for (int i = 0; i < oleada.cantidad; i++)
         {

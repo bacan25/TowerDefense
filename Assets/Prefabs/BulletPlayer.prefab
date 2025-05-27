@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8781483739461772395}
   - component: {fileID: 6947235384209613643}
   m_Layer: 0
-  m_Name: BulletPlayer_Demo
+  m_Name: BulletPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   speed: 35
   lifetime: 4
   dmg: 0
+  hit: {fileID: 4186470608034871016, guid: b64d71c4378388f43837ae5702cd0e0d, type: 3}
 --- !u!54 &6947235384209613643
 Rigidbody:
   m_ObjectHideFlags: 0

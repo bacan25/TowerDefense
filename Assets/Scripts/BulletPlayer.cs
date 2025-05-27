@@ -11,6 +11,8 @@ namespace Player
         private Transform target;
         [HideInInspector] public int dmg;
 
+        public GameObject hit;
+
         void OnEnable()
         {
             spawnTime = Time.time;
@@ -37,6 +39,12 @@ namespace Player
 
         void OnTriggerEnter(Collider col)
         {
+            if (hit != null)
+            {
+                GameObject impacto = Instantiate(hit, transform.position, Quaternion.identity);
+                Destroy(impacto, 2f);
+            }
+
             if (col.CompareTag("Enemy"))
                 col.GetComponent<Enemy>()?.RecibirDaño(dmg);
             gameObject.SetActive(false);

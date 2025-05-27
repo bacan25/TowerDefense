@@ -1,40 +1,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletPool : MonoBehaviour
+namespace Player
 {
-    [Header("Pool essentials")]
-    [SerializeField]private GameObject bulletPrefab;
-    [SerializeField]private int poolSize = 20;
-    [SerializeField]private Transform bulletsParent;
-
-    private List<GameObject> bullets = new List<GameObject>();
-
-    void Start()
+    public class BulletPool : MonoBehaviour
     {
-        for (int i = 0; i < poolSize; i++)
-        {
-            GameObject obj = Instantiate(bulletPrefab, bulletsParent);
-            obj.SetActive(false);
-            bullets.Add(obj);
-        }
-    }
+        [Header("Pool essentials")]
+        [SerializeField] private GameObject bulletPrefab;
+        [SerializeField] private int poolSize = 20;
+        [SerializeField] private Transform bulletsParent;
 
-    public GameObject GetBullet(int givenDmg)
-    {
-        foreach (GameObject bullet in bullets)
+        private List<GameObject> bullets = new List<GameObject>();
+
+        void Start()
         {
-            if (!bullet.activeInHierarchy)
+            for (int i = 0; i < poolSize; i++)
             {
-                bullet.GetComponent<BulletPlayer>().dmg = givenDmg;
-                return bullet;
+                var obj = Instantiate(bulletPrefab, bulletsParent);
+                obj.SetActive(false);
+                bullets.Add(obj);
             }
         }
 
-        GameObject newBullet = Instantiate(bulletPrefab, bulletsParent);
-        newBullet.GetComponent<BulletPlayer>().dmg = givenDmg;
-        newBullet.SetActive(false);
-        bullets.Add(newBullet);
-        return newBullet;
+        public GameObject GetBullet(int givenDmg)
+        {
+            foreach (var bullet in bullets)
+            {
+                if (!bullet.activeInHierarchy)
+                {
+                    var bp = bullet.GetComponent<BulletPlayer>();
+                    bp.dmg = givenDmg;
+                    return bullet;
+                }
+            }
+
+            var newBullet = Instantiate(bulletPrefab, bulletsParent);
+            var newBp = newBullet.GetComponent<BulletPlayer>();
+            newBp.dmg = givenDmg;
+            newBullet.SetActive(false);
+            bullets.Add(newBullet);
+            return newBullet;
+        }
     }
 }

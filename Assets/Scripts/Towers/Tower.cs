@@ -1,29 +1,30 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Player;
+
 
 /// <summary>
 /// Controla el comportamiento de una torre defensiva.
 /// </summary>
 public class Tower : MonoBehaviour
 {
-    [Tooltip("Radio de detección de enemigos.")]
     public float rango = 5f;
-    [Tooltip("Daño que causa cada disparo.")]
-    public float daño = 10f;
-    [Tooltip("Tiempo en segundos entre disparos.")]
+    public int daño = 10;
     public float tiempoDisparo = 1f;
+
+    [Header("Projectile Setup")]
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private BulletPool bulletPool;
 
     private float temporizador;
     private Enemy objetivoActual;
     private List<Enemy> enemigosEnRango = new List<Enemy>();
-
-    [Tooltip("Estrategia para selección de objetivos.")]
     public ITargetSelectionStrategy estrategiaObjetivo = new SeleccionarMasCercano();
 
     void Update()
     {
+        // (presupongo que ya tienes ActualizarEnemigosEnRango() e ITargetSelectionStrategy)
         ActualizarEnemigosEnRango();
-
         if (objetivoActual == null || !enemigosEnRango.Contains(objetivoActual))
             objetivoActual = estrategiaObjetivo.SeleccionarObjetivo(this, enemigosEnRango);
 
@@ -40,9 +41,21 @@ public class Tower : MonoBehaviour
 
     void DispararA(Enemy enemigo)
     {
-        enemigo?.RecibirDaño(daño);
-        // Aquí podrías instanciar un proyectil o efecto visual
+        // 1) Pedir bala al pool, ya viene con dmg asignado
+        GameObject projObj = bulletPool.GetBullet(daño);
+
+        // 2) Posicionar y resetear rotación
+        projObj.transform.position = firePoint.position;
+        projObj.transform.rotation = Quaternion.identity;
+
+        // 3) Darle el target
+        projObj.GetComponent<BulletPlayer>().SetTarget(enemigo.transform);
+
+        // 4) Activar la bala
+        projObj.SetActive(true);
     }
+
+
 
     void ActualizarEnemigosEnRango()
     {

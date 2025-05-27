@@ -16600,7 +16600,7 @@ GameObject:
   - component: {fileID: 1890720867}
   - component: {fileID: 1890720865}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: BP_Crossbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16618,7 +16618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9977f9501916c0448030bc079cc01d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3129092110289374831, guid: d80be7be8ae889d4792b3de5f6139d9f, type: 3}
+  bulletPrefab: {fileID: 3129092110289374831, guid: 71d278810025fb745adaebba68c2f9a6, type: 3}
   poolSize: 20
   bulletsParent: {fileID: 739283482}
 --- !u!23 &1890720867

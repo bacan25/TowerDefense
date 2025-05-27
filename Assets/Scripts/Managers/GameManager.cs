@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
         FaseConstruccion = true;
         CameraIso.SetActive(true);
         CameraFPS.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         UIManager.Instance.ShowIsoHUD();
         OnFaseConstruccionChanged?.Invoke(true);
     }
@@ -68,10 +70,15 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void IniciarOleada()
     {
+        Debug.Log("▶ GameManager.IniciarOleada iniciado");
         FaseConstruccion = false;
         CameraIso.SetActive(false);
         CameraFPS.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         UIManager.Instance.ShowFPSHUD();
+        Debug.Log($"   Cámaras: Iso={CameraIso.activeSelf}, FPS={CameraFPS.activeSelf}");
         OnFaseConstruccionChanged?.Invoke(false);
         WaveManager.Instance.ComenzarOleada();
     }

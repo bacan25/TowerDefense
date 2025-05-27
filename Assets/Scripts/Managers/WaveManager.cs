@@ -10,8 +10,8 @@ public class WaveManager : MonoBehaviour
     public static WaveManager Instance { get; private set; }
 
     /// <summary>
-    /// Se dispara cada vez que cambia el número de minions restantes.
-    /// Pasa como parámetro cuántos enemigos quedan por spawnear en la oleada actual.
+    /// Se dispara cada vez que cambia el número de minions restantes por spawnear.
+    /// Pasa como parámetro cuántos quedan por crear.
     /// </summary>
     public static event Action<int> OnMinionsRemainingChanged;
 
@@ -52,8 +52,10 @@ public class WaveManager : MonoBehaviour
 
     private IEnumerator IniciarOleadaRoutine()
     {
-        if (indiceOleadaActual >= oleadas.Length) yield break;
-        Oleada oleada = oleadas[indiceOleadaActual];
+        if (indiceOleadaActual >= oleadas.Length) 
+            yield break;
+
+        var oleada = oleadas[indiceOleadaActual];
 
         // Aumento de dificultad opcional
         if (indiceOleadaActual != 0)
@@ -63,19 +65,19 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i < total; i++)
         {
             // Spawn
-            Transform spawn = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
-            Instantiate(oleada.prefabEnemigo, spawn.position, spawn.rotation, enemiesContainer);
+            var spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
+            Instantiate(oleada.prefabEnemigo, spawnPoint.position, spawnPoint.rotation, enemiesContainer);
 
-            // Disparo de evento: quedan (total - i - 1) por crear
+            // Notifica cuántos quedan por spawnear
             OnMinionsRemainingChanged?.Invoke(total - i - 1);
 
             yield return new WaitForSeconds(oleada.intervalo);
         }
 
-        // Pequeña espera antes de pasar a preparación
-        yield return new WaitForSeconds(3f);
+        // Espera hasta que todos los enemigos instanciados hayan sido destruidos
+        yield return new WaitUntil(() => enemiesContainer.childCount == 0);
 
-        // Incrementa el índice y avisa de la nueva ronda
+        // Incrementa el índice y notifica nueva ronda
         indiceOleadaActual++;
         OnRondaCambiada?.Invoke(indiceOleadaActual);
 

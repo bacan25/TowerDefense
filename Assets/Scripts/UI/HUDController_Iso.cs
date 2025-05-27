@@ -61,7 +61,7 @@ public class HUDController_Iso : MonoBehaviour
         btnTerminarPrep.onClick.AddListener(() =>
         {
             panelConfirmar.SetActive(false);
-            ZonasConstruccion.Instance.Iluminar(false);
+            ZonasConstruccion.Instance?.Iluminar(false);
             GameManager.Instance.IniciarOleada();
         });
 

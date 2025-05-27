@@ -5,7 +5,7 @@ public class PlayerShooting : MonoBehaviour
     [Header("Shooting essentials")]
     [SerializeField]private Transform firePoint;
     public BulletPool bulletPool;
-    [SerializeField]private float fireRate = 0.2f;
+    [SerializeField]private float fireRate;
     [SerializeField]private int bulletDmg = 10;
     private float lastShotTime = 0f;
     bool canAttack = true;

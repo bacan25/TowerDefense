@@ -1,4 +1,3 @@
-// TowerManager.cs
 using UnityEngine;
 using System.Linq;
 
@@ -30,9 +29,15 @@ public class TowerManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Obtiene la configuración de una torre por su tipo.
+    /// </summary>
     public ConfigTorre GetConfig(TorreTipo tipo)
         => torres.First(cfg => cfg.tipo == tipo);
 
+    /// <summary>
+    /// Obtiene el coste de una torre sin tocar el oro.
+    /// </summary>
     public int Costo(TorreTipo tipo)
         => GetConfig(tipo).costo;
 
@@ -42,19 +47,17 @@ public class TowerManager : MonoBehaviour
     public void PrepararConstruccion(TorreTipo tipo)
     {
         seleccionActual = tipo;
-        // Opcional: iluminar zonas
         ZonasConstruccion.Instance.IluminarTodas(true);
     }
 
     /// <summary>
     /// Instancia la torre seleccionada en el centro de la zona clicada,
-    /// gasta oro y reemplaza la torre previa en esa zona si existía.
+    /// gasta el oro y limpia la selección.
     /// </summary>
     public bool ColocarTorreSeleccionada()
     {
         var zonas = ZonasConstruccion.Instance;
         var zone = zonas.SelectedZone;
-
         if (zone == null)
         {
             Debug.LogWarning("No hay zona seleccionada para construir.");
@@ -63,18 +66,19 @@ public class TowerManager : MonoBehaviour
 
         var cfg = GetConfig(seleccionActual);
 
+        // Aquí descontamos el oro y disparamos OnOroCambiado
         if (!GameManager.Instance.GastarOro(cfg.costo))
         {
             Debug.LogWarning("Oro insuficiente para construir.");
             return false;
         }
 
+        // Instanciamos la torre en la posición central de la zona
         Vector3 center = zonas.SelectedZoneCenter;
         var towerObj = Instantiate(cfg.prefab, center, Quaternion.identity);
 
+        // Asociamos la torre a la zona y apagamos el highlight
         zonas.PlaceTowerInZone(zone, towerObj);
-
-        // Opcional: una vez colocada, dejamos de iluminar o deseleccionamos
         zonas.ClearSelection();
         zonas.IluminarTodas(false);
 

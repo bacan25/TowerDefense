@@ -16,18 +16,10 @@ public class Enemy : MonoBehaviour
     public int recompensaOro = 10;
 
     private bool isDead = false;
-
     private int saludActual;
-    /// <summary>
-    /// Salud actual del enemigo (solo lectura).
-    /// </summary>
     public int Salud => saludActual;
 
     [SerializeField] private Animator anim;
-
-    /// <summary>
-    /// Estrategia de movimiento (puede asignarse dinámicamente).
-    /// </summary>
     public IMovementStrategy estrategiaMovimiento;
 
     private Transform objetivoActualDelCamino;
@@ -49,28 +41,22 @@ public class Enemy : MonoBehaviour
 
     void MoverPorDefecto()
     {
-        if (!isDead)
-        {
-            if (objetivoActualDelCamino == null) return;
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                objetivoActualDelCamino.position,
-                velocidad * Time.deltaTime
-            );
+        if (isDead) return;
 
-            if (Vector3.Distance(transform.position, objetivoActualDelCamino.position) < 0.1f)
-            {
-                indiceWaypoint++;
-                objetivoActualDelCamino = PathManager.Instance.GetWaypoint(indiceWaypoint);
-                if (objetivoActualDelCamino == null)
-                    LlegarAlNucleo();
-            }
-        }
-        else
-        {
-            gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        if (objetivoActualDelCamino == null) return;
 
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            objetivoActualDelCamino.position,
+            velocidad * Time.deltaTime
+        );
+
+        if (Vector3.Distance(transform.position, objetivoActualDelCamino.position) < 0.1f)
+        {
+            indiceWaypoint++;
+            objetivoActualDelCamino = PathManager.Instance.GetWaypoint(indiceWaypoint);
+            if (objetivoActualDelCamino == null)
+                LlegarAlNucleo();
         }
     }
 
@@ -90,15 +76,16 @@ public class Enemy : MonoBehaviour
 
     void Morir(bool alcanzóNucleo = false)
     {
+        if (isDead) return;
+        isDead = true;
         if (!alcanzóNucleo)
             GameManager.Instance.RecompensaPorEnemigo(recompensaOro);
 
-        isDead = true;
-        anim.SetBool("isDead", isDead);
+        // desactiva collider/rigidbody, lanza animación…
+        anim.SetBool("isDead", true);
 
-        // Calculamos cuántos quedan y lo notificamos
-        int vivosRestantes = WaveManager.Instance.EnemigosVivos - 1;
-        WaveManager.RaiseEnemigosVivosChanged(vivosRestantes);
+        // avisamos al manager antes de destruir
+        WaveManager.Instance.EnemigoMuerto();
 
         Destroy(gameObject, 3f);
     }

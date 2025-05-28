@@ -43,7 +43,7 @@ public class HUDController_Iso : MonoBehaviour
 
     void Start()
     {
-        
+
         towerManager = FindObjectOfType<TowerManager>();
         if (towerManager == null)
         {
@@ -73,9 +73,9 @@ public class HUDController_Iso : MonoBehaviour
 
     void LateUpdate()
     {
-        if(GameManager.Instance.FaseConstruccion == true)
+        if (GameManager.Instance.FaseConstruccion == true)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 FinalizarPrep();
             }
@@ -100,7 +100,7 @@ public class HUDController_Iso : MonoBehaviour
         panelConfirmar.SetActive(false);
         ZonasConstruccion.Instance.IluminarTodas(false);
         GameManager.Instance.IniciarOleada();
-        
+
     }
 
     /// <summary>
@@ -122,9 +122,11 @@ public class HUDController_Iso : MonoBehaviour
 
     private void ActualizarDinero(int oro)
     {
+        Debug.Log($"[HUD] Oro actualizado a {oro}");
         dineroText.text = $"Oro: {oro}";
         ActualizarBotonesConstruccion(oro);
     }
+
 
     /// <summary>
     /// Habilita o deshabilita los botones de torre según el coste.
@@ -163,21 +165,18 @@ public class HUDController_Iso : MonoBehaviour
 
     public void ConfirmarConstruccion()
     {
-        var cfg = towerManager.GetConfig(tipoSeleccionado);
-        if (GameManager.Instance.Oro < cfg.costo)
-        {
-            Debug.LogWarning("Oro insuficiente.");
-            return;
-        }
-
-        // Coloca torre en UltimaPosicionClick
+        // var cfg = towerManager.GetConfig(tipoSeleccionado);  // ya no hace falta para gastar oro
         if (towerManager.ColocarTorreSeleccionada())
         {
             construccion.Play();
             CerrarPanel();
         }
-
+        else
+        {
+            Debug.LogWarning("No se pudo colocar la torre (oro insuficiente o zona inválida).");
+        }
     }
+
     public void CancelarConstruccion()
     {
         CerrarPanel();

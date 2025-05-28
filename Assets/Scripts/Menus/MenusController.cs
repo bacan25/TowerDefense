@@ -8,7 +8,7 @@ public class MenusController : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void MainMenu()
+    public void RestartLevel()
     {
         SceneManager.LoadScene(1);
     }

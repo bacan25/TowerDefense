@@ -218,8 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5123b619b17f9447bb6a0fbf435cfd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 6
-  saludMax: 20
+  velocidad: 300
+  saludMax: 26
   "da\xF1oAlNucleo": 5
   recompensaOro: 10
   anim: {fileID: 2232650656145022614}

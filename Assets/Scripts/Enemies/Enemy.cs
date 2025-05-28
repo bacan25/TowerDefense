@@ -7,7 +7,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Tooltip("Velocidad de movimiento del enemigo.")]
-    public float velocidad = 3f;
+    public float velocidad = 330f;
     [Tooltip("Salud máxima del enemigo.")]
     public int saludMax = 20;
     [Tooltip("Daño que inflige al núcleo al llegar.")]

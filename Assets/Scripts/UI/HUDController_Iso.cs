@@ -64,13 +64,22 @@ public class HUDController_Iso : MonoBehaviour
         // Botón terminar preparación
         btnTerminarPrep.onClick.AddListener(() =>
         {
-            panelConfirmar.SetActive(false);
-            ZonasConstruccion.Instance.IluminarTodas(false);
-            GameManager.Instance.IniciarOleada();
+            FinalizarPrep();
         });
 
         // Init de HUD
         SetupHUD();
+    }
+
+    void LateUpdate()
+    {
+        if(GameManager.Instance.FaseConstruccion == true)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                FinalizarPrep();
+            }
+        }
     }
 
     void OnEnable()
@@ -84,6 +93,14 @@ public class HUDController_Iso : MonoBehaviour
     {
         GameManager.OnOroCambiado -= ActualizarDinero;
         GameManager.OnFaseConstruccionChanged -= OnFaseConstruccionChanged;
+    }
+
+    void FinalizarPrep()
+    {
+        panelConfirmar.SetActive(false);
+        ZonasConstruccion.Instance.IluminarTodas(false);
+        GameManager.Instance.IniciarOleada();
+        
     }
 
     /// <summary>

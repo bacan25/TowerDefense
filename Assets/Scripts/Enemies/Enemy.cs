@@ -65,6 +65,9 @@ public class Enemy : MonoBehaviour
                 if (objetivoActualDelCamino == null)
                     LlegarAlNucleo();
             }
+        }else{
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            gameObject.GetComponent<Rigidbody>().constraints |= RigidbodyConstraints.FreezePositionY;
         }
     }
 

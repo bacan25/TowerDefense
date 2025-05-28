@@ -8,6 +8,11 @@ public class MenusController : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void NextScene()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;

@@ -6,14 +6,29 @@ using UnityEngine;
 /// </summary>
 public class CoreHealth : MonoBehaviour 
 {
+    // 1) Singleton
+    public static CoreHealth Instance { get; private set; }
+
     [Tooltip("Vida máxima del núcleo.")]
     public int vidaMaxima = 20;
+
+    // Vida actual expuesta para lecturas
     public int VidaActual { get; private set; }
 
+    // Evento para notificar cambios de vida
     public static event Action<int> OnVidaNucleoCambiada;
 
-    void Start()
+    void Awake()
     {
+        // Inicializa singleton
+        if (Instance == null) Instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        // Inicializa vida y dispara el evento inmediatamente
         VidaActual = vidaMaxima;
         OnVidaNucleoCambiada?.Invoke(VidaActual);
     }
@@ -23,9 +38,9 @@ public class CoreHealth : MonoBehaviour
     /// </summary>
     public void AplicarDaño(int cantidad)
     {
-        VidaActual -= cantidad;
-        if (VidaActual < 0) VidaActual = 0;
+        VidaActual = Mathf.Max(VidaActual - cantidad, 0);
         OnVidaNucleoCambiada?.Invoke(VidaActual);
+
         if (VidaActual == 0)
             GameManager.Instance.GameOver(false);
     }

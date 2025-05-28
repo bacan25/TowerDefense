@@ -2325,7 +2325,7 @@ GameObject:
   - component: {fileID: 214735287}
   - component: {fileID: 214735289}
   - component: {fileID: 214735288}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Detalles_Pared1 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3895,7 +3895,7 @@ GameObject:
   - component: {fileID: 361720641}
   - component: {fileID: 361720640}
   - component: {fileID: 361720642}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Piece054 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6024,7 +6024,7 @@ GameObject:
   - component: {fileID: 608341089}
   - component: {fileID: 608341091}
   - component: {fileID: 608341090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Stones_B011 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6554,7 +6554,7 @@ GameObject:
   - component: {fileID: 634282373}
   - component: {fileID: 634282375}
   - component: {fileID: 634282374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Stones_A014 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7435,7 +7435,7 @@ GameObject:
   - component: {fileID: 709240507}
   - component: {fileID: 709240509}
   - component: {fileID: 709240508}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Stones_F015 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7521,7 +7521,7 @@ GameObject:
   - component: {fileID: 709553020}
   - component: {fileID: 709553022}
   - component: {fileID: 709553021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Stones_B011 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8574,7 +8574,7 @@ GameObject:
   - component: {fileID: 776800828}
   - component: {fileID: 776800827}
   - component: {fileID: 776800829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pared (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9011,7 +9011,7 @@ GameObject:
   - component: {fileID: 816305207}
   - component: {fileID: 816305209}
   - component: {fileID: 816305208}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Detalles_Pared1 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10568,6 +10568,7 @@ MonoBehaviour:
   oroInicial: 100
   CameraIso: {fileID: 1352597513}
   CameraFPS: {fileID: 330585543}
+  fullBodyPrefab: {fileID: 5520061505547745440}
 --- !u!1 &1086177885
 GameObject:
   m_ObjectHideFlags: 0
@@ -10967,7 +10968,7 @@ GameObject:
   - component: {fileID: 1109642145}
   - component: {fileID: 1109642147}
   - component: {fileID: 1109642146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Detalles_Pared1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13034,8 +13035,8 @@ Camera:
   m_GameObject: {fileID: 1352597513}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.046345554, g: 0.14150941, b: 0.03938234, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -13058,13 +13059,13 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 52
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -13084,13 +13085,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352597513}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.35225594, y: 0.5756626, z: -0.30106443, w: -0.67371255}
-  m_LocalPosition: {x: 93.46138, y: 222.79208, z: -189.97679}
+  m_LocalRotation: {x: 0.4202569, y: -0.53346, z: 0.34643298, w: 0.6471389}
+  m_LocalPosition: {x: 72, y: 191, z: -163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 66, y: -79, z: 0}
 --- !u!1 &1360240109
 GameObject:
   m_ObjectHideFlags: 0
@@ -13418,7 +13419,7 @@ GameObject:
   - component: {fileID: 1384888197}
   - component: {fileID: 1384888199}
   - component: {fileID: 1384888198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Stones_F015 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14414,7 +14415,7 @@ GameObject:
   - component: {fileID: 1490073709}
   - component: {fileID: 1490073711}
   - component: {fileID: 1490073710}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Stones_A014 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14500,7 +14501,7 @@ GameObject:
   - component: {fileID: 1498105286}
   - component: {fileID: 1498105288}
   - component: {fileID: 1498105287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Detalles_Pared1 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14889,7 +14890,7 @@ GameObject:
   - component: {fileID: 1518219298}
   - component: {fileID: 1518219297}
   - component: {fileID: 1518219299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Piece054 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17851,7 +17852,7 @@ GameObject:
   - component: {fileID: 1841102264}
   - component: {fileID: 1841102266}
   - component: {fileID: 1841102265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Stones_B011 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18244,7 +18245,7 @@ GameObject:
   - component: {fileID: 1889874622}
   - component: {fileID: 1889874621}
   - component: {fileID: 1889874623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Piece054 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20438,6 +20439,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 620411162156758338, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2697319541885355565, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
       propertyPath: bulletPool
       value: 
@@ -20498,6 +20503,11 @@ PrefabInstance:
 --- !u!20 &5520061505547745439 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6369789918811706373, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
+  m_PrefabInstance: {fileID: 5520061505547745438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5520061505547745440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7643877830323463726, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
   m_PrefabInstance: {fileID: 5520061505547745438}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

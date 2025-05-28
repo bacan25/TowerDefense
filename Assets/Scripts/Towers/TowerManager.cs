@@ -1,8 +1,9 @@
+// TowerManager.cs
 using UnityEngine;
 using System.Linq;
 
 /// <summary>
-/// Gestiona la construcción de torres en la fase de preparación.
+/// Gestiona la selección e instanciación de torres en la fase de preparación.
 /// </summary>
 public class TowerManager : MonoBehaviour
 {
@@ -16,51 +17,67 @@ public class TowerManager : MonoBehaviour
         public TorreTipo tipo;
         public GameObject prefab;
         public int costo;
-        public Sprite previewSprite;  // Sprite para la vista previa en el panel
+        public Sprite previewSprite;
     }
+    [Tooltip("Configuraciones de cada tipo de torre")]
     public ConfigTorre[] torres;
 
     private TorreTipo seleccionActual;
 
     void Awake()
     {
-        // Singleton (opcional)
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
-    /// <summary>
-    /// Devuelve la configuración completa de la torre solicitada.
-    /// </summary>
     public ConfigTorre GetConfig(TorreTipo tipo)
         => torres.First(cfg => cfg.tipo == tipo);
 
-    /// <summary>
-    /// Costo en oro de la torre indicada.
-    /// </summary>
     public int Costo(TorreTipo tipo)
         => GetConfig(tipo).costo;
 
     /// <summary>
-    /// Prepara la construcción seleccionando el tipo de torre.
+    /// Prepara la construcción (se guarda el tipo seleccionado).
     /// </summary>
     public void PrepararConstruccion(TorreTipo tipo)
     {
         seleccionActual = tipo;
+        // Opcional: iluminar zonas
+        ZonasConstruccion.Instance.IluminarTodas(true);
     }
 
     /// <summary>
-    /// Instancia la torre escogida en la posición de construcción si hay oro suficiente.
+    /// Instancia la torre seleccionada en el centro de la zona clicada,
+    /// gasta oro y reemplaza la torre previa en esa zona si existía.
     /// </summary>
     public bool ColocarTorreSeleccionada()
     {
-        var cfg = GetConfig(seleccionActual);
-        Vector3 pos = ZonasConstruccion.Instance.UltimaPosicionClick;
-        if (GameManager.Instance.GastarOro(cfg.costo))
+        var zonas = ZonasConstruccion.Instance;
+        var zone = zonas.SelectedZone;
+
+        if (zone == null)
         {
-            Instantiate(cfg.prefab, pos, Quaternion.identity);
-            return true;
+            Debug.LogWarning("No hay zona seleccionada para construir.");
+            return false;
         }
-        return false;
+
+        var cfg = GetConfig(seleccionActual);
+
+        if (!GameManager.Instance.GastarOro(cfg.costo))
+        {
+            Debug.LogWarning("Oro insuficiente para construir.");
+            return false;
+        }
+
+        Vector3 center = zonas.SelectedZoneCenter;
+        var towerObj = Instantiate(cfg.prefab, center, Quaternion.identity);
+
+        zonas.PlaceTowerInZone(zone, towerObj);
+
+        // Opcional: una vez colocada, dejamos de iluminar o deseleccionamos
+        zonas.ClearSelection();
+        zonas.IluminarTodas(false);
+
+        return true;
     }
 }

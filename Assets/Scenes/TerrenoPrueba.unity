@@ -17970,7 +17970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35512857d4f9f3e4dbd02952f66d40ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oroInicial: 100
+  oroInicial: 50
   CameraIso: {fileID: 1352597513}
   CameraFPS: {fileID: 330585543}
   fullBodyPrefab: {fileID: 5520061505547745440}
@@ -31641,8 +31641,7 @@ MonoBehaviour:
   - {fileID: 357340754}
   colorNormal: {r: 1, g: 1, b: 1, a: 0}
   colorHighlight: {r: 0.946563, g: 1, b: 0, a: 0}
-  colorSelected: {r: 0, g: 0, b: 0, a: 0}
-  UltimaPosicionClick: {x: 0, y: 0, z: 0}
+  colorSelected: {r: 0, g: 0.6748581, b: 1, a: 0}
 --- !u!4 &1964623068
 Transform:
   m_ObjectHideFlags: 0

@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
         Oro = oroInicial;
         OnOroCambiado?.Invoke(Oro);
         IniciarPreparacion();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     /// <summary>

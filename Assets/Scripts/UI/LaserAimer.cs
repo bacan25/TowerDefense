@@ -13,11 +13,10 @@ public class LaserAimer : MonoBehaviour
     void Awake()
     {
         lr = GetComponent<LineRenderer>();
-        cam = Camera.main;  // en vez de GetComponent<Camera>()
+        cam = Camera.main;
         lr.positionCount = 2;
         lr.enabled = false;
     }
-
 
     void OnEnable()
     {
@@ -52,10 +51,9 @@ public class LaserAimer : MonoBehaviour
                 var rend = hit.collider.GetComponent<Renderer>();
                 if (rend != null && ZonasConstruccion.Instance.zonas.Contains(rend))
                 {
-                    // guardamos la posición y marcamos la zona
-                    ZonasConstruccion.Instance.UltimaPosicionClick = hit.point;
+                    // Solo marcamos la zona seleccionada
                     ZonasConstruccion.Instance.SelectZone(rend);
-                    // abrimos el panel de confirmación
+                    // Abrimos el panel de confirmación
                     FindObjectOfType<HUDController_Iso>()?.MostrarConfirmaciónConstrucción();
                 }
             }

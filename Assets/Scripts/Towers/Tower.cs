@@ -21,6 +21,8 @@ public class Tower : MonoBehaviour
     private List<Enemy> enemigosEnRango = new List<Enemy>();
     public ITargetSelectionStrategy estrategiaObjetivo = new SeleccionarMasCercano();
 
+    public AudioSource sfx;
+
     void Update()
     {
         // (presupongo que ya tienes ActualizarEnemigosEnRango() e ITargetSelectionStrategy)
@@ -41,6 +43,7 @@ public class Tower : MonoBehaviour
 
     void DispararA(Enemy enemigo)
     {
+        sfx.Play();
         // 1) Pedir bala al pool, ya viene con dmg asignado
         GameObject projObj = bulletPool.GetBullet(daño);
 

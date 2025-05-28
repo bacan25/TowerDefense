@@ -15,6 +15,8 @@ public class PlayerShooting : MonoBehaviour
     [Header("Animator")]
     public Animator anim;
 
+    public AudioSource sfx;
+
     void Update()
     {
         if(canAttack)
@@ -23,6 +25,7 @@ public class PlayerShooting : MonoBehaviour
             {
                 anim.SetTrigger("Shoot");
                 canAttack = false;
+                sfx.Play();
                 Invoke("ResetAttck", fireRate);
             }
         }

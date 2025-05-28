@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("Cámara para la fase de combate (vista FPS).")]
     public GameObject CameraFPS;
     public GameObject fullBodyPrefab;
+    public PlayerShooting shootingScript;
 
     [Header("Fases")]
     public bool FaseConstruccion { get; private set; } = true;
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
         FaseConstruccion = true;
         CameraIso.SetActive(true);
         fullBodyPrefab.SetActive(true);
+        shootingScript.enabled = false;
         CameraFPS.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
         FaseConstruccion = false;
         CameraIso.SetActive(false);
         fullBodyPrefab.SetActive(false);
+        shootingScript.enabled = true;
         CameraFPS.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

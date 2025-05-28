@@ -10666,10 +10666,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35512857d4f9f3e4dbd02952f66d40ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oroInicial: 100
+  oroInicial: 2000
   CameraIso: {fileID: 1352597513}
   CameraFPS: {fileID: 330585543}
   fullBodyPrefab: {fileID: 5520061505547745440}
+  shootingScript: {fileID: 1116779900}
 --- !u!1 &1086177885
 GameObject:
   m_ObjectHideFlags: 0
@@ -11316,6 +11317,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115301534}
   m_Mesh: {fileID: -6316665016284328555, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!1 &1116779898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5848155974671611497, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
+  m_PrefabInstance: {fileID: 5520061505547745438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1116779900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2697319541885355565, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
+  m_PrefabInstance: {fileID: 5520061505547745438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116779898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7009c39ab4ef8344ebfd96c3157ffd58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &1116779902
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116779898}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2a48837d6d7a44149927ccdf97be1cf7, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2a48837d6d7a44149927ccdf97be1cf7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.097
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1136804796
 GameObject:
   m_ObjectHideFlags: 0
@@ -18650,7 +18764,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f57bedaf21060ce42b578aa6ddf9f3f6, type: 3}
   m_Resource: {fileID: 8300000, guid: f57bedaf21060ce42b578aa6ddf9f3f6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.138
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -20853,6 +20967,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2697319541885355565, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 1116779902}
+    - target: {fileID: 2697319541885355565, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 711305071}
@@ -20907,7 +21025,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5848155974671611497, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1116779902}
   m_SourcePrefab: {fileID: 100100000, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
 --- !u!20 &5520061505547745439 stripped
 Camera:

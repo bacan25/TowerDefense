@@ -512,9 +512,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c373bad7a06fa4797e503bb778f11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 1, g: 1, b: 1, a: 0}
+  hoverColor: {r: 0.2969342, g: 0.6509434, b: 0.15045391, a: 0}
   hoverScale: 1.4
   transitionSpeed: 8
+  hoverSFX: {fileID: 8300000, guid: 4bf79b0724938214e93fe5e3dd68d69f, type: 3}
+  sfxVolume: 0.2
 --- !u!1 &625014824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,6 +1130,8 @@ MonoBehaviour:
   hoverColor: {r: 0.2969342, g: 0.6509434, b: 0.15045391, a: 0}
   hoverScale: 1.4
   transitionSpeed: 8
+  hoverSFX: {fileID: 8300000, guid: 4bf79b0724938214e93fe5e3dd68d69f, type: 3}
+  sfxVolume: 0.2
 --- !u!114 &1117681488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1600,6 +1604,8 @@ MonoBehaviour:
   hoverColor: {r: 0.2969342, g: 0.6509434, b: 0.15045391, a: 0}
   hoverScale: 1.4
   transitionSpeed: 8
+  hoverSFX: {fileID: 8300000, guid: 4bf79b0724938214e93fe5e3dd68d69f, type: 3}
+  sfxVolume: 0.2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -21,6 +21,8 @@ public class HUDController_Iso : MonoBehaviour
     [SerializeField] private Button btnConfirmar;
     [SerializeField] private Button btnCancelar;
 
+    [SerializeField] private AudioSource construccion;
+
 
     private TowerManager towerManager;
     private TowerManager.TorreTipo tipoSeleccionado;
@@ -148,7 +150,11 @@ public class HUDController_Iso : MonoBehaviour
 
         // Coloca torre en UltimaPosicionClick
         if (towerManager.ColocarTorreSeleccionada())
+        {
+            construccion.Play();
             CerrarPanel();
+        }
+            
     }
     public void CancelarConstruccion()
     {

@@ -1263,6 +1263,7 @@ GameObject:
   - component: {fileID: 147244167}
   - component: {fileID: 147244169}
   - component: {fileID: 147244168}
+  - component: {fileID: 147244170}
   m_Layer: 0
   m_Name: Lugar de torretas (14)
   m_TagString: Untagged
@@ -1341,6 +1342,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147244166}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &147244170
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147244166}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &150322549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,6 +1689,7 @@ GameObject:
   - component: {fileID: 161346676}
   - component: {fileID: 161346678}
   - component: {fileID: 161346677}
+  - component: {fileID: 161346679}
   m_Layer: 0
   m_Name: Lugar de torretas (3)
   m_TagString: Untagged
@@ -1745,6 +1768,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161346675}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &161346679
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161346675}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142159, y: 0.36126938, z: 0.006600123}
+  m_Center: {x: 0, y: 0.0000008940697, z: -0.0001282302}
 --- !u!1 &171347629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +3305,7 @@ GameObject:
   - component: {fileID: 330701750}
   - component: {fileID: 330701752}
   - component: {fileID: 330701751}
+  - component: {fileID: 330701753}
   m_Layer: 0
   m_Name: Lugar de torretas (10)
   m_TagString: Untagged
@@ -3339,6 +3384,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330701749}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &330701753
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330701749}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &334501280
 GameObject:
   m_ObjectHideFlags: 0
@@ -3579,6 +3645,7 @@ GameObject:
   - component: {fileID: 357340753}
   - component: {fileID: 357340755}
   - component: {fileID: 357340754}
+  - component: {fileID: 357340756}
   m_Layer: 0
   m_Name: Lugar de torretas (19)
   m_TagString: Untagged
@@ -3657,6 +3724,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357340752}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &357340756
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357340752}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &359557437
 GameObject:
   m_ObjectHideFlags: 0
@@ -4027,6 +4115,7 @@ GameObject:
   - component: {fileID: 400412533}
   - component: {fileID: 400412535}
   - component: {fileID: 400412534}
+  - component: {fileID: 400412536}
   m_Layer: 0
   m_Name: Lugar de torretas (17)
   m_TagString: Untagged
@@ -4105,6 +4194,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400412532}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &400412536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400412532}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142159, y: 0.36126938, z: 0.006600123}
+  m_Center: {x: 0, y: 0, z: -0.00012799946}
 --- !u!1 &403169748
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,6 +5085,7 @@ GameObject:
   - component: {fileID: 491817391}
   - component: {fileID: 491817393}
   - component: {fileID: 491817392}
+  - component: {fileID: 491817394}
   m_Layer: 0
   m_Name: Lugar de torretas (9)
   m_TagString: Untagged
@@ -5053,6 +5164,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491817390}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &491817394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491817390}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &508567097
 GameObject:
   m_ObjectHideFlags: 0
@@ -5614,105 +5746,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2831948948428786741, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
---- !u!1 &556127539
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 556127542}
-  - component: {fileID: 556127541}
-  - component: {fileID: 556127540}
-  m_Layer: 0
-  m_Name: Torre1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &556127540
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556127539}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &556127541
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556127539}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 13.063232, y: 11.904667, z: 13.031448}
-  m_Center: {x: -0.5388756, y: 5.4523335, z: -0.16736603}
---- !u!4 &556127542
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556127539}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.25, y: 36.86, z: -244.07}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &586105265
 GameObject:
   m_ObjectHideFlags: 0
@@ -6077,6 +6110,7 @@ GameObject:
   - component: {fileID: 612964744}
   - component: {fileID: 612964746}
   - component: {fileID: 612964745}
+  - component: {fileID: 612964747}
   m_Layer: 0
   m_Name: Lugar de torretas (7)
   m_TagString: Untagged
@@ -6155,6 +6189,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612964743}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &612964747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612964743}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &618093823
 GameObject:
   m_ObjectHideFlags: 0
@@ -6252,6 +6307,7 @@ GameObject:
   - component: {fileID: 632956695}
   - component: {fileID: 632956697}
   - component: {fileID: 632956696}
+  - component: {fileID: 632956698}
   m_Layer: 0
   m_Name: Lugar de torretas (15)
   m_TagString: Untagged
@@ -6330,6 +6386,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632956694}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &632956698
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632956694}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &634282372
 GameObject:
   m_ObjectHideFlags: 0
@@ -6692,6 +6769,7 @@ GameObject:
   - component: {fileID: 689266886}
   - component: {fileID: 689266888}
   - component: {fileID: 689266887}
+  - component: {fileID: 689266889}
   m_Layer: 0
   m_Name: Lugar de torretas (8)
   m_TagString: Untagged
@@ -6770,6 +6848,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689266885}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &689266889
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689266885}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &692547796
 GameObject:
   m_ObjectHideFlags: 0
@@ -7089,6 +7188,7 @@ GameObject:
   - component: {fileID: 708930399}
   - component: {fileID: 708930401}
   - component: {fileID: 708930400}
+  - component: {fileID: 708930402}
   m_Layer: 0
   m_Name: Lugar de torretas (1)
   m_TagString: Untagged
@@ -7167,6 +7267,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708930398}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &708930402
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708930398}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142159, y: 0.36126938, z: 0.006600123}
+  m_Center: {x: 0, y: 0.0000008940697, z: -0.0001282302}
 --- !u!1 &709240506
 GameObject:
   m_ObjectHideFlags: 0
@@ -8069,6 +8190,7 @@ GameObject:
   - component: {fileID: 770312315}
   - component: {fileID: 770312317}
   - component: {fileID: 770312316}
+  - component: {fileID: 770312318}
   m_Layer: 0
   m_Name: Lugar de torretas (13)
   m_TagString: Untagged
@@ -8147,6 +8269,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770312314}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &770312318
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770312314}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &774981689
 GameObject:
   m_ObjectHideFlags: 0
@@ -8807,105 +8950,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816305206}
   m_Mesh: {fileID: 5338783262326698298, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
---- !u!1 &828178382
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 828178385}
-  - component: {fileID: 828178384}
-  - component: {fileID: 828178383}
-  m_Layer: 0
-  m_Name: Torre2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &828178383
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828178382}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &828178384
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828178382}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 13.063232, y: 11.904667, z: 13.031448}
-  m_Center: {x: -0.5388756, y: 5.4523335, z: -0.16736603}
---- !u!4 &828178385
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828178382}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.54, y: 36.86, z: -244.07}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -10106,6 +10150,7 @@ GameObject:
   - component: {fileID: 1032710466}
   - component: {fileID: 1032710468}
   - component: {fileID: 1032710467}
+  - component: {fileID: 1032710469}
   m_Layer: 0
   m_Name: Lugar de torretas (4)
   m_TagString: Untagged
@@ -10184,6 +10229,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032710465}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &1032710469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032710465}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &1042855209 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3993824894192681216, guid: 48ad887c10e8e9a43a0b38e4b78f8cfa, type: 3}
@@ -11109,6 +11175,7 @@ GameObject:
   - component: {fileID: 1137455025}
   - component: {fileID: 1137455027}
   - component: {fileID: 1137455026}
+  - component: {fileID: 1137455028}
   m_Layer: 0
   m_Name: Lugar de torretas (6)
   m_TagString: Untagged
@@ -11187,6 +11254,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137455024}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &1137455028
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137455024}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &1141836546
 GameObject:
   m_ObjectHideFlags: 0
@@ -12280,6 +12368,7 @@ GameObject:
   - component: {fileID: 1309440940}
   - component: {fileID: 1309440942}
   - component: {fileID: 1309440941}
+  - component: {fileID: 1309440943}
   m_Layer: 0
   m_Name: Lugar de torretas (18)
   m_TagString: Untagged
@@ -12358,6 +12447,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309440939}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &1309440943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309440939}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &1326521256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8040201361623082440, guid: 48ad887c10e8e9a43a0b38e4b78f8cfa, type: 3}
@@ -13452,6 +13562,7 @@ GameObject:
   - component: {fileID: 1412811752}
   - component: {fileID: 1412811754}
   - component: {fileID: 1412811753}
+  - component: {fileID: 1412811755}
   m_Layer: 0
   m_Name: Lugar de torretas (12)
   m_TagString: Untagged
@@ -13530,6 +13641,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412811751}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &1412811755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412811751}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &1433584871
 GameObject:
   m_ObjectHideFlags: 0
@@ -15526,6 +15658,7 @@ GameObject:
   - component: {fileID: 1619323815}
   - component: {fileID: 1619323817}
   - component: {fileID: 1619323816}
+  - component: {fileID: 1619323818}
   m_Layer: 0
   m_Name: Lugar de torretas (5)
   m_TagString: Untagged
@@ -15604,6 +15737,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619323814}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &1619323818
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619323814}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &1619622345
 GameObject:
   m_ObjectHideFlags: 0
@@ -16709,6 +16863,7 @@ GameObject:
   - component: {fileID: 1740643395}
   - component: {fileID: 1740643397}
   - component: {fileID: 1740643396}
+  - component: {fileID: 1740643398}
   m_Layer: 0
   m_Name: Lugar de torretas (11)
   m_TagString: Untagged
@@ -16787,6 +16942,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740643394}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &1740643398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740643394}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142156, y: 0.36126935, z: 0.0066001224}
+  m_Center: {x: 0, y: 0, z: -0.00012799945}
 --- !u!1 &1761259959
 GameObject:
   m_ObjectHideFlags: 0
@@ -18337,8 +18513,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zonas:
-  - {fileID: 556127540}
-  - {fileID: 828178383}
+  - {fileID: 1253609107}
+  - {fileID: 708930400}
+  - {fileID: 2108716407}
+  - {fileID: 161346677}
+  - {fileID: 1032710467}
+  - {fileID: 1619323816}
+  - {fileID: 1137455026}
+  - {fileID: 612964745}
+  - {fileID: 689266887}
+  - {fileID: 491817392}
+  - {fileID: 330701751}
+  - {fileID: 1740643396}
+  - {fileID: 1412811753}
+  - {fileID: 770312316}
+  - {fileID: 147244168}
+  - {fileID: 632956696}
+  - {fileID: 2062335254}
+  - {fileID: 400412534}
+  - {fileID: 1309440941}
+  - {fileID: 357340754}
   colorNormal: {r: 1, g: 1, b: 1, a: 0}
   colorHighlight: {r: 0.946563, g: 1, b: 0, a: 0}
   UltimaPosicionClick: {x: 0, y: 0, z: 0}
@@ -18848,6 +19042,7 @@ GameObject:
   - component: {fileID: 2062335253}
   - component: {fileID: 2062335255}
   - component: {fileID: 2062335254}
+  - component: {fileID: 2062335256}
   m_Layer: 0
   m_Name: Lugar de torretas (16)
   m_TagString: Untagged
@@ -18926,6 +19121,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062335252}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &2062335256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062335252}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142159, y: 0.36126938, z: 0.006600123}
+  m_Center: {x: 0, y: 0, z: -0.00012799946}
 --- !u!1 &2064003535
 GameObject:
   m_ObjectHideFlags: 0
@@ -19422,6 +19638,7 @@ GameObject:
   - component: {fileID: 2108716406}
   - component: {fileID: 2108716408}
   - component: {fileID: 2108716407}
+  - component: {fileID: 2108716409}
   m_Layer: 0
   m_Name: Lugar de torretas (2)
   m_TagString: Untagged
@@ -19500,6 +19717,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108716405}
   m_Mesh: {fileID: -973293009701899817, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!65 &2108716409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108716405}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36142159, y: 0.36126938, z: 0.006600123}
+  m_Center: {x: 0, y: 0.0000005066395, z: -0.0001282302}
 --- !u!1 &2113756063
 GameObject:
   m_ObjectHideFlags: 0
@@ -20154,5 +20392,3 @@ SceneRoots:
   - {fileID: 243483928}
   - {fileID: 403169751}
   - {fileID: 1985032117}
-  - {fileID: 556127542}
-  - {fileID: 828178385}

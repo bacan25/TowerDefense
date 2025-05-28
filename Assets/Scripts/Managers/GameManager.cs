@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Gestiona el estado global del juego, fases, economía y eventos principales.
@@ -72,7 +73,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void IniciarOleada()
     {
-        Debug.Log("▶ GameManager.IniciarOleada iniciado");
         FaseConstruccion = false;
         CameraIso.SetActive(false);
         fullBodyPrefab.SetActive(false);
@@ -81,7 +81,6 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
 
         UIManager.Instance.ShowFPSHUD();
-        Debug.Log($"   Cámaras: Iso={CameraIso.activeSelf}, FPS={CameraFPS.activeSelf}");
         OnFaseConstruccionChanged?.Invoke(false);
         WaveManager.Instance.ComenzarOleada();
     }
@@ -115,9 +114,10 @@ public class GameManager : MonoBehaviour
     /// <param name="victoria">True si ganó, false si perdió.</param>
     public void GameOver(bool victoria)
     {
-        Debug.Log(victoria
-            ? "¡Victoria! Todas las oleadas completadas."
-            : "Derrota. El núcleo ha sido destruido.");
-        Time.timeScale = 0f;
+        if(!victoria)
+        {
+            SceneManager.LoadScene(2);
+        }
+        //Time.timeScale = 0f;
     }
 }

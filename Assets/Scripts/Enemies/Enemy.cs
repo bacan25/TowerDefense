@@ -67,7 +67,8 @@ public class Enemy : MonoBehaviour
             }
         }else{
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            gameObject.GetComponent<Rigidbody>().constraints |= RigidbodyConstraints.FreezePositionY;
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            
         }
     }
 

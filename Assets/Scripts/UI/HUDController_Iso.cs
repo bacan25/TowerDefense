@@ -21,6 +21,8 @@ public class HUDController_Iso : MonoBehaviour
     [SerializeField] private Button btnConfirmar;
     [SerializeField] private Button btnCancelar;
 
+    [SerializeField] private AudioSource construccion;
+
 
     private TowerManager towerManager;
     private TowerManager.TorreTipo tipoSeleccionado;
@@ -61,7 +63,7 @@ public class HUDController_Iso : MonoBehaviour
         btnTerminarPrep.onClick.AddListener(() =>
         {
             panelConfirmar.SetActive(false);
-            ZonasConstruccion.Instance?.Iluminar(false);
+            ZonasConstruccion.Instance.IluminarTodas(false);
             GameManager.Instance.IniciarOleada();
         });
 
@@ -115,38 +117,44 @@ public class HUDController_Iso : MonoBehaviour
     private void Seleccionar(TowerManager.TorreTipo tipo)
     {
         tipoSeleccionado = tipo;
-        var cfg = towerManager.GetConfig(tipo);  // Método que devuelve ConfigTorre
+        var cfg = towerManager.GetConfig(tipo);
 
-        // Actualiza panel de confirmación
+        // Actualizamos UI de preview
         txtNombreTorre.text = cfg.tipo.ToString();
         txtCostoTorre.text = $"Costo: {cfg.costo}";
-        imgPreviewTorre.sprite = cfg.previewSprite;  // Añade previewSprite en ConfigTorre
+        imgPreviewTorre.sprite = cfg.previewSprite;
 
-        // Bloquea todos los botones de selección para evitar doble click
-        btnBallesta.interactable = false;
-        btnCanon.interactable = false;
-        btnTorreMagica.interactable = false;
-
+        // Preparamos construcción y iluminamos todas
         towerManager.PrepararConstruccion(tipo);
-        ZonasConstruccion.Instance.Iluminar(true);
-        panelConfirmar.SetActive(true);
-    }
+        ZonasConstruccion.Instance.IluminarTodas(true);
 
+        // No abrimos el panel aún; se abrirá tras clic en zona
+    }
+    /// <summary>
+    /// Llamado desde LaserAimer tras hacer clic en zona válida.
+    /// </summary>
+    public void MostrarConfirmaciónConstrucción()
+    {
+        panelConfirmar.SetActive(true);
+        btnConfirmar.interactable = true;
+    }
 
     public void ConfirmarConstruccion()
     {
         var cfg = towerManager.GetConfig(tipoSeleccionado);
-        // Antes de llamar a ColocarTorreSeleccionada, bloquea el botón si no hay oro:
-        btnConfirmar.interactable = GameManager.Instance.Oro >= cfg.costo;
-
-        if (towerManager.ColocarTorreSeleccionada())
-            CerrarPanel();
-        else
+        if (GameManager.Instance.Oro < cfg.costo)
         {
-            Debug.LogWarning("Oro insuficiente para construir.");
-            // Aquí podrías mostrar un popup o un sonido de error
+            Debug.LogWarning("Oro insuficiente.");
+            return;
+        }
+
+        // Coloca torre en UltimaPosicionClick
+        if (towerManager.ColocarTorreSeleccionada())
+        {
+            construccion.Play();
             CerrarPanel();
         }
+            
     }
     public void CancelarConstruccion()
     {
@@ -156,14 +164,10 @@ public class HUDController_Iso : MonoBehaviour
     private void CerrarPanel()
     {
         panelConfirmar.SetActive(false);
-        ZonasConstruccion.Instance.Iluminar(false);
+        ZonasConstruccion.Instance.IluminarTodas(false);
 
-        // Reactiva botones de selección y actualiza su estado según oro
-        int oro = GameManager.Instance.Oro;
-        ActualizarBotonesConstruccion(oro);
-
-        // Limpia preview (opcional)
-        imgPreviewTorre.sprite = null;
+        // reactiva botones según oro
+        ActualizarDinero(GameManager.Instance.Oro);
     }
 
     /// <summary>
@@ -174,7 +178,7 @@ public class HUDController_Iso : MonoBehaviour
         if (!enConstruccion)
         {
             panelConfirmar.SetActive(false);
-            ZonasConstruccion.Instance.Iluminar(false);
+            ZonasConstruccion.Instance.IluminarTodas(false);
         }
     }
 }

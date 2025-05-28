@@ -64,10 +64,10 @@ public class GameManager : MonoBehaviour
         fullBodyPrefab.SetActive(true);
         shootingScript.enabled = false;
         CameraFPS.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
         UIManager.Instance.ShowIsoHUD();
         OnFaseConstruccionChanged?.Invoke(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     /// <summary>

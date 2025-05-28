@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     /// </summary>
     public int Salud => saludActual;
 
-    [SerializeField]private Animator anim;
+    [SerializeField] private Animator anim;
 
     /// <summary>
     /// Estrategia de movimiento (puede asignarse dinámicamente).
@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
 
     void MoverPorDefecto()
     {
-        if(!isDead)
+        if (!isDead)
         {
             if (objetivoActualDelCamino == null) return;
             transform.position = Vector3.MoveTowards(
@@ -65,10 +65,12 @@ public class Enemy : MonoBehaviour
                 if (objetivoActualDelCamino == null)
                     LlegarAlNucleo();
             }
-        }else{
+        }
+        else
+        {
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            
+
         }
     }
 
@@ -93,6 +95,13 @@ public class Enemy : MonoBehaviour
 
         isDead = true;
         anim.SetBool("isDead", isDead);
+
+        // Calculamos cuántos quedan y lo notificamos
+        int vivosRestantes = WaveManager.Instance.EnemigosVivos - 1;
+        WaveManager.RaiseEnemigosVivosChanged(vivosRestantes);
+
         Destroy(gameObject, 3f);
     }
+
+
 }

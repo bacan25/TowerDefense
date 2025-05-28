@@ -55,6 +55,10 @@ public class WaveManager : MonoBehaviour
     {
         StartCoroutine(IniciarOleadaRoutine());
     }
+    public static void RaiseEnemigosVivosChanged(int vivos)
+    {
+        OnEnemigosVivosChanged?.Invoke(vivos);
+    }
 
     private IEnumerator IniciarOleadaRoutine()
     {

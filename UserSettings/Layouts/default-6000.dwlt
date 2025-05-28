@@ -259,7 +259,7 @@ MonoBehaviour:
     height: 36
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: BedoyaWorkplace
+  m_LastLoadedLayoutName: 
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -471,7 +471,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7e3a0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 20fbffff4ca50000
       m_RenameOverlay:
@@ -613,7 +613,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: e8a70000
     m_LastClickedID: 42984
-    m_ExpandedIDs: 00000000f4fc0000f6fc0000f8fc0000fafc0000fcfc0000fefc000000fd000000ca9a3b
+    m_ExpandedIDs: 0000000022fd000024fd000026fd000028fd00002afd00002cfd00002efd0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -642,7 +642,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f4fc0000f6fc0000f8fc0000fafc0000fcfc0000fefc000000fd000000ca9a3b
+    m_ExpandedIDs: 0000000022fd000024fd000026fd000028fd00002afd00002cfd00002efd0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1310,9 +1310,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -2.9876375, y: 1.1233578, z: 3.1861672}
+    m_Target: {x: 72.173935, y: 191.07097, z: -163.1854}
     speed: 2
-    m_Value: {x: 968.4288, y: 543.9534, z: 0.031001776}
+    m_Value: {x: -2.9876375, y: 1.1233578, z: 3.1861672}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1358,13 +1358,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.10808319, y: 0.83669364, z: -0.17860597, w: -0.5063268}
+    m_Target: {x: -0.35725757, y: 0.54630667, z: -0.27674553, w: -0.70522785}
     speed: 2
-    m_Value: {x: -0.11351437, y: 0.61757, z: -0.090690404, w: -0.77298254}
+    m_Value: {x: -0.10808292, y: 0.83669156, z: -0.17860553, w: -0.50632554}
   m_Size:
-    m_Target: 7.586129
+    m_Target: 0.12511727
     speed: 2
-    m_Value: 1.0064151
+    m_Value: 7.586129
   m_Ortho:
     m_Target: 0
     speed: 2

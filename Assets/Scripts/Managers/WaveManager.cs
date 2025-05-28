@@ -2,33 +2,20 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-/// <summary>
-/// Controla la aparición de oleadas de enemigos.
-/// </summary>
 public class WaveManager : MonoBehaviour
 {
     public static WaveManager Instance { get; private set; }
 
-    /// <summary>
-    /// Se dispara cada vez que cambia el número de minions restantes por spawnear.
-    /// Pasa como parámetro cuántos quedan por crear.
-    /// </summary>
     public static event Action<int> OnMinionsRemainingChanged;
     public static event Action<int> OnEnemigosVivosChanged;
-
-    /// <summary>
-    /// Se dispara al iniciar cada nueva ronda.
-    /// Pasa como parámetro el número de ronda (0-basado).
-    /// </summary>
     public static event Action<int> OnRondaCambiada;
 
-    [System.Serializable]
+    [Serializable]
     public class Oleada
     {
         public GameObject prefabEnemigo;
         public int cantidad = 35;
         public float intervalo = 1f;
-
     }
 
     [Tooltip("Configuración de cada oleada.")]
@@ -37,10 +24,9 @@ public class WaveManager : MonoBehaviour
     public Transform[] spawnPoints;
 
     [SerializeField] private Transform enemiesContainer;
+
     private int indiceOleadaActual = 0;
-
-    public int EnemigosVivos => enemiesContainer.childCount;
-
+    private int vivosActuales = 0;
 
     void Awake()
     {
@@ -62,36 +48,56 @@ public class WaveManager : MonoBehaviour
             yield break;
 
         var oleada = oleadas[indiceOleadaActual];
-
-        // Aumento de dificultad opcional
-        if (indiceOleadaActual != 0)
-            oleada.prefabEnemigo.GetComponent<Enemy>().saludMax += indiceOleadaActual * 2;
-
         int total = oleada.cantidad;
+
+        // Opcional: escalar salud
+        if (indiceOleadaActual > 0)
+        {
+            var ejemplo = oleada.prefabEnemigo.GetComponent<Enemy>();
+            if (ejemplo != null)
+                ejemplo.saludMax += indiceOleadaActual * 2;
+        }
+
         for (int i = 0; i < total; i++)
         {
+            // 1) Selecciona spawn
+            Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
 
-            // Spawn
-            var spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
-            Instantiate(oleada.prefabEnemigo, spawnPoint.position, spawnPoint.rotation, enemiesContainer);
-            OnEnemigosVivosChanged?.Invoke(enemiesContainer.childCount);
+            // 2) Instancia dentro de "enemiesContainer"
+            Instantiate(
+                oleada.prefabEnemigo,
+                spawnPoint.position,
+                spawnPoint.rotation,
+                enemiesContainer
+            );
 
+            // 3) Actualiza y notifica vivos
+            vivosActuales++;
+            OnEnemigosVivosChanged?.Invoke(vivosActuales);
 
-            // Notifica cuántos quedan por spawnear
+            // 4) Notifica cuántos faltan por spawnear
             OnMinionsRemainingChanged?.Invoke(total - i - 1);
 
             yield return new WaitForSeconds(oleada.intervalo);
         }
 
-        // Espera hasta que todos los enemigos instanciados hayan sido destruidos
-        yield return new WaitUntil(() => enemiesContainer.childCount == 0);
+        // Espera a que todos mueran (vivosActuales llegue a 0)
+        yield return new WaitUntil(() => vivosActuales == 0);
 
-        // Incrementa el índice y notifica nueva ronda
-        OnEnemigosVivosChanged?.Invoke(0);
+        // Nueva ronda
         indiceOleadaActual++;
         OnRondaCambiada?.Invoke(indiceOleadaActual);
 
         // Vuelta a fase de preparación
         GameManager.Instance.IniciarPreparacion();
+    }
+
+    /// <summary>
+    /// Llamar desde Enemy.Morir() justo antes de Destroy(...)
+    /// </summary>
+    public void EnemigoMuerto()
+    {
+        vivosActuales = Mathf.Max(0, vivosActuales - 1);
+        OnEnemigosVivosChanged?.Invoke(vivosActuales);
     }
 }

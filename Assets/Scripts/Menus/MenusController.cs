@@ -12,7 +12,7 @@ public class MenusController : MonoBehaviour
     public void RestartLevel()
     {
         CleanupPersistentManagers();
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 
     public void NextScene()

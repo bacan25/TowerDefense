@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
     {
         if(!victoria)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         //Time.timeScale = 0f;
     }

@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rango: 30
-  "da\xF1o": 20
+  "da\xF1o": 30
   tiempoDisparo: 1
   firePoint: {fileID: 7698157852333118821}
   bulletPool: {fileID: 8930888956051418189}

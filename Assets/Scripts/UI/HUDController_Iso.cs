@@ -29,6 +29,7 @@ public class HUDController_Iso : MonoBehaviour
 
     void Awake()
     {
+
         // Comprueba asignaciones mínimas
         if (dineroText == null || btnTerminarPrep == null ||
             btnBallesta == null || btnCanon == null || btnTorreMagica == null ||
@@ -42,6 +43,7 @@ public class HUDController_Iso : MonoBehaviour
 
     void Start()
     {
+        
         towerManager = FindObjectOfType<TowerManager>();
         if (towerManager == null)
         {
@@ -73,6 +75,7 @@ public class HUDController_Iso : MonoBehaviour
 
     void OnEnable()
     {
+
         GameManager.OnOroCambiado += ActualizarDinero;
         GameManager.OnFaseConstruccionChanged += OnFaseConstruccionChanged;
     }
@@ -96,6 +99,8 @@ public class HUDController_Iso : MonoBehaviour
 
         // Asegura que los botones de torre empiecen deshabilitados si no hay oro
         ActualizarBotonesConstruccion(GameManager.Instance.Oro);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void ActualizarDinero(int oro)
@@ -154,7 +159,7 @@ public class HUDController_Iso : MonoBehaviour
             construccion.Play();
             CerrarPanel();
         }
-            
+
     }
     public void CancelarConstruccion()
     {

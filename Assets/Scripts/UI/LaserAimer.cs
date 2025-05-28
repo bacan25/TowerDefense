@@ -13,10 +13,11 @@ public class LaserAimer : MonoBehaviour
     void Awake()
     {
         lr = GetComponent<LineRenderer>();
-        cam = GetComponent<Camera>();
+        cam = Camera.main;  // en vez de GetComponent<Camera>()
         lr.positionCount = 2;
         lr.enabled = false;
     }
+
 
     void OnEnable()
     {

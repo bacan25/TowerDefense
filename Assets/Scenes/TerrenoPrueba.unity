@@ -17777,7 +17777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35512857d4f9f3e4dbd02952f66d40ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oroInicial: 2000
+  oroInicial: 50
   CameraIso: {fileID: 1352597513}
   CameraFPS: {fileID: 330585543}
   fullBodyPrefab: {fileID: 5520061505547745440}

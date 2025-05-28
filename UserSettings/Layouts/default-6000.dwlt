@@ -345,7 +345,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: f4350000
     m_LastClickedID: 13812
-    m_ExpandedIDs: 0000000070f2000000ca9a3bffffff7f
+    m_ExpandedIDs: 0000000060fd000062fd000064fd000066fd000068fd00006afd00006cfd00006efd0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -374,7 +374,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000070f2000000ca9a3bffffff7f
+    m_ExpandedIDs: 0000000060fd000062fd000064fd000066fd000068fd00006afd00006cfd00006efd0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 18af0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 42fbffff
       m_RenameOverlay:
@@ -1210,9 +1210,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -16.25303, y: -9.307057, z: -23.693743}
+    m_Target: {x: -2.3183422, y: -2.6936803, z: -45.42809}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: -16.25303, y: -9.307057, z: -23.693743}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1258,11 +1258,11 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.05806126, y: 0.9328665, z: -0.17495868, w: -0.3095422}
+    m_Target: {x: 0.007817587, y: -0.98979694, z: 0.059766978, w: 0.12932077}
     speed: 2
-    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Value: {x: -0.05806016, y: 0.9328488, z: -0.17495535, w: -0.30953634}
   m_Size:
-    m_Target: 22.313587
+    m_Target: 28.588665
     speed: 2
     m_Value: 22.313587
   m_Ortho:
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1532, y: 769}
+  m_TargetSize: {x: 1367, y: 769}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 0
@@ -1355,8 +1355,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -766
-    m_HBaseRangeMax: 766
+    m_HBaseRangeMin: -683.5
+    m_HBaseRangeMax: 683.5
     m_VBaseRangeMin: -384.5
     m_VBaseRangeMax: 384.5
     m_HAllowExceedBaseRangeMin: 1

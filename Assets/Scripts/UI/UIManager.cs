@@ -15,9 +15,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI fpsRondaText;
     [SerializeField] private TextMeshProUGUI fpsMinionsText;
     [SerializeField] private TextMeshProUGUI fpsOroText;
+    [SerializeField] private TextMeshProUGUI fpsVivosText;
 
     [Header("HUD Isométrico Elements")]
     [SerializeField] private TextMeshProUGUI isoOroText;
+    [SerializeField] private TextMeshProUGUI isoVivosText;
+
 
     void Awake()
     {
@@ -35,22 +38,25 @@ public class UIManager : MonoBehaviour
         UpdateOro(GameManager.Instance.Oro);
         UpdateVida(CoreHealth.Instance.VidaActual);
         // Minions y ronda se actualizarán cuando comiencen oleadas
+        UpdateVivos(0);
     }
 
     void OnEnable()
     {
-        GameManager.OnOroCambiado               += UpdateOro;
-        CoreHealth.OnVidaNucleoCambiada        += UpdateVida;
-        WaveManager.OnMinionsRemainingChanged   += UpdateMinions;
-        WaveManager.OnRondaCambiada            += UpdateRonda;
+        GameManager.OnOroCambiado += UpdateOro;
+        CoreHealth.OnVidaNucleoCambiada += UpdateVida;
+        WaveManager.OnMinionsRemainingChanged += UpdateMinions;
+        WaveManager.OnRondaCambiada += UpdateRonda;
+        WaveManager.OnEnemigosVivosChanged += UpdateVivos;
     }
 
     void OnDisable()
     {
-        GameManager.OnOroCambiado               -= UpdateOro;
-        CoreHealth.OnVidaNucleoCambiada        -= UpdateVida;
-        WaveManager.OnMinionsRemainingChanged   -= UpdateMinions;
-        WaveManager.OnRondaCambiada            -= UpdateRonda;
+        GameManager.OnOroCambiado -= UpdateOro;
+        CoreHealth.OnVidaNucleoCambiada -= UpdateVida;
+        WaveManager.OnMinionsRemainingChanged -= UpdateMinions;
+        WaveManager.OnRondaCambiada -= UpdateRonda;
+        WaveManager.OnEnemigosVivosChanged -= UpdateVivos;
     }
 
     // Actualizadores:
@@ -68,6 +74,11 @@ public class UIManager : MonoBehaviour
     private void UpdateMinions(int quedan)
     {
         fpsMinionsText.text = $"Minions: {quedan}";
+    }
+    private void UpdateVivos(int vivos)
+    {
+        fpsVivosText.text = $"Vivos: {vivos}";
+        isoVivosText.text = $"Vivos: {vivos}";
     }
 
     private void UpdateRonda(int ronda)

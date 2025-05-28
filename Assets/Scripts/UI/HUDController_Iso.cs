@@ -135,17 +135,19 @@ public class HUDController_Iso : MonoBehaviour
 
     public void ConfirmarConstruccion()
     {
+        var cfg = towerManager.GetConfig(tipoSeleccionado);
+        // Antes de llamar a ColocarTorreSeleccionada, bloquea el botón si no hay oro:
+        btnConfirmar.interactable = GameManager.Instance.Oro >= cfg.costo;
+
         if (towerManager.ColocarTorreSeleccionada())
-        {
             CerrarPanel();
-        }
         else
         {
             Debug.LogWarning("Oro insuficiente para construir.");
+            // Aquí podrías mostrar un popup o un sonido de error
             CerrarPanel();
         }
     }
-
     public void CancelarConstruccion()
     {
         CerrarPanel();

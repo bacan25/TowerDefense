@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Controla la aparición de oleadas de enemigos.
 /// </summary>
-public class WaveManager : MonoBehaviour 
+public class WaveManager : MonoBehaviour
 {
     public static WaveManager Instance { get; private set; }
 
@@ -14,6 +14,7 @@ public class WaveManager : MonoBehaviour
     /// Pasa como parámetro cuántos quedan por crear.
     /// </summary>
     public static event Action<int> OnMinionsRemainingChanged;
+    public static event Action<int> OnEnemigosVivosChanged;
 
     /// <summary>
     /// Se dispara al iniciar cada nueva ronda.
@@ -22,10 +23,12 @@ public class WaveManager : MonoBehaviour
     public static event Action<int> OnRondaCambiada;
 
     [System.Serializable]
-    public class Oleada {
+    public class Oleada
+    {
         public GameObject prefabEnemigo;
         public int cantidad = 35;
         public float intervalo = 1f;
+
     }
 
     [Tooltip("Configuración de cada oleada.")]
@@ -35,6 +38,9 @@ public class WaveManager : MonoBehaviour
 
     [SerializeField] private Transform enemiesContainer;
     private int indiceOleadaActual = 0;
+
+    public int EnemigosVivos => enemiesContainer.childCount;
+
 
     void Awake()
     {
@@ -52,7 +58,7 @@ public class WaveManager : MonoBehaviour
 
     private IEnumerator IniciarOleadaRoutine()
     {
-        if (indiceOleadaActual >= oleadas.Length) 
+        if (indiceOleadaActual >= oleadas.Length)
             yield break;
 
         var oleada = oleadas[indiceOleadaActual];
@@ -64,9 +70,12 @@ public class WaveManager : MonoBehaviour
         int total = oleada.cantidad;
         for (int i = 0; i < total; i++)
         {
+
             // Spawn
             var spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
             Instantiate(oleada.prefabEnemigo, spawnPoint.position, spawnPoint.rotation, enemiesContainer);
+            OnEnemigosVivosChanged?.Invoke(enemiesContainer.childCount);
+
 
             // Notifica cuántos quedan por spawnear
             OnMinionsRemainingChanged?.Invoke(total - i - 1);
@@ -78,6 +87,7 @@ public class WaveManager : MonoBehaviour
         yield return new WaitUntil(() => enemiesContainer.childCount == 0);
 
         // Incrementa el índice y notifica nueva ronda
+        OnEnemigosVivosChanged?.Invoke(0);
         indiceOleadaActual++;
         OnRondaCambiada?.Invoke(indiceOleadaActual);
 

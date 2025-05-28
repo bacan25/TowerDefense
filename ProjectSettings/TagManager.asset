@@ -12,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Roof
   - 
   - 
   - 
@@ -41,6 +41,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: HUD_FPS
+    uniqueID: 3971542969
+    locked: 0
+  - name: HUD_Iso
+    uniqueID: 3694219089
     locked: 0
   m_RenderingLayers:
   - Default

@@ -17,11 +17,11 @@ public class PlayerShooting : MonoBehaviour
 
     public AudioSource sfx;
 
-    void Update()
+    public void ShootButtonPressed()
     {
         if(canAttack)
         {
-            if (Input.GetButton("Fire1") && Time.time - lastShotTime > fireRate)
+            if (Time.time - lastShotTime > fireRate)
             {
                 anim.SetTrigger("Shoot");
                 canAttack = false;
@@ -29,9 +29,9 @@ public class PlayerShooting : MonoBehaviour
                 Invoke("ResetAttck", fireRate);
             }
         }
-        
     }
 
+    //Esto se llama a través de la animación
     public void Shoot()
     {
         lastShotTime = Time.time;

@@ -33,6 +33,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (isDead) return;
+        
         if (estrategiaMovimiento != null)
             estrategiaMovimiento.Mover(this);
         else
@@ -72,6 +74,14 @@ public class Enemy : MonoBehaviour
         CoreHealth core = FindObjectOfType<CoreHealth>();
         core?.AplicarDaño(dañoAlNucleo);
         Morir(true);
+    }
+    
+    /// <summary>
+    /// Método público para que las estrategias puedan indicar que el enemigo alcanzó el núcleo.
+    /// </summary>
+    public void AlcanzarNucleo()
+    {
+        LlegarAlNucleo();
     }
 
     void Morir(bool alcanzóNucleo = false)

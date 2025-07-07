@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Enemies;
 
 public class WaveManager : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public class WaveManager : MonoBehaviour
         public GameObject prefabEnemigo;
         public int cantidad = 35;
         public float intervalo = 1f;
+        
+        [Header("Distribución de Estrategias (%)")]
+        [Range(0, 100)] public float porcentajeNormal = 40f;
+        [Range(0, 100)] public float porcentajeRapido = 20f;
+        [Range(0, 100)] public float porcentajeZigzag = 20f;
+        [Range(0, 100)] public float porcentajeTanque = 20f;
     }
 
     [Tooltip("Configuración de cada oleada.")]
@@ -58,28 +65,47 @@ public class WaveManager : MonoBehaviour
                 ejemplo.saludMax += indiceOleadaActual * 2;
         }
 
+        // Almacenar enemigos para asignar estrategias en grupo
+        Enemy[] enemigosSpawneados = new Enemy[total];
+        
         for (int i = 0; i < total; i++)
         {
             // 1) Selecciona spawn
             Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
 
             // 2) Instancia dentro de "enemiesContainer"
-            Instantiate(
+            GameObject enemigoObj = Instantiate(
                 oleada.prefabEnemigo,
                 spawnPoint.position,
                 spawnPoint.rotation,
                 enemiesContainer
             );
+            
+            // 3) Obtener componente Enemy
+            Enemy enemigo = enemigoObj.GetComponent<Enemy>();
+            if (enemigo != null)
+            {
+                enemigosSpawneados[i] = enemigo;
+            }
 
-            // 3) Actualiza y notifica vivos
+            // 4) Actualiza y notifica vivos
             vivosActuales++;
             OnEnemigosVivosChanged?.Invoke(vivosActuales);
 
-            // 4) Notifica cuántos faltan por spawnear
+            // 5) Notifica cuántos faltan por spawnear
             OnMinionsRemainingChanged?.Invoke(total - i - 1);
 
             yield return new WaitForSeconds(oleada.intervalo);
         }
+        
+        // Asignar estrategias a todos los enemigos de la oleada
+        EnemyStrategyFactory.AsignarEstrategiasGrupo(
+            enemigosSpawneados, 
+            oleada.porcentajeNormal / 100f,
+            oleada.porcentajeRapido / 100f, 
+            oleada.porcentajeZigzag / 100f,
+            oleada.porcentajeTanque / 100f
+        );
 
         // Espera a que todos mueran (vivosActuales llegue a 0)
         yield return new WaitUntil(() => vivosActuales == 0);

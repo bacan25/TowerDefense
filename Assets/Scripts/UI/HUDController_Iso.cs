@@ -143,16 +143,18 @@ public class HUDController_Iso : MonoBehaviour
         tipoSeleccionado = tipo;
         var cfg = towerManager.GetConfig(tipo);
 
-        // Actualizamos UI de preview
-        txtNombreTorre.text = cfg.tipo.ToString();
-        txtCostoTorre.text = $"Costo: {cfg.costo}";
-        imgPreviewTorre.sprite = cfg.previewSprite;
+        // Verificar si hay oro suficiente
+        if (GameManager.Instance.Oro < cfg.costo)
+        {
+            Debug.Log($"Oro insuficiente para construir {cfg.tipo}. Necesitas {cfg.costo} oro.");
+            return;
+        }
 
-        // Preparamos construcción y iluminamos todas
+        // Preparamos construcción con preview
         towerManager.PrepararConstruccion(tipo);
-        ZonasConstruccion.Instance.IluminarTodas(true);
-
-        // No abrimos el panel aún; se abrirá tras clic en zona
+        
+        // El panel de confirmación ya no es necesario con el nuevo sistema
+        panelConfirmar.SetActive(false);
     }
     /// <summary>
     /// Llamado desde LaserAimer tras hacer clic en zona válida.

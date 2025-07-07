@@ -89,4 +89,12 @@ public class ZonasConstruccion : MonoBehaviour
 
         zoneTowerMap[zone] = tower;
     }
+    
+    /// <summary>
+    /// Verifica si una zona ya tiene una torre construida.
+    /// </summary>
+    public bool IsZoneOccupied(Renderer zone)
+    {
+        return zoneTowerMap.TryGetValue(zone, out var tower) && tower != null;
+    }
 }

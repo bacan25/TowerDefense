@@ -22,11 +22,18 @@ public class TowerManager : MonoBehaviour
     public ConfigTorre[] torres;
 
     private TorreTipo seleccionActual;
+    private TowerPreview towerPreview;
+    private bool isPlacingTower = false;
 
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        
+        // Crear o encontrar el componente TowerPreview
+        towerPreview = GetComponent<TowerPreview>();
+        if (towerPreview == null)
+            towerPreview = gameObject.AddComponent<TowerPreview>();
     }
 
     /// <summary>
@@ -42,11 +49,18 @@ public class TowerManager : MonoBehaviour
         => GetConfig(tipo).costo;
 
     /// <summary>
-    /// Prepara la construcción (se guarda el tipo seleccionado).
+    /// Prepara la construcción mostrando vista previa de la torre.
     /// </summary>
     public void PrepararConstruccion(TorreTipo tipo)
     {
         seleccionActual = tipo;
+        isPlacingTower = true;
+        
+        // Iniciar vista previa
+        var config = GetConfig(tipo);
+        towerPreview.StartPreview(config);
+        
+        // Iluminar zonas de construcción
         ZonasConstruccion.Instance.IluminarTodas(true);
     }
 
@@ -81,7 +95,43 @@ public class TowerManager : MonoBehaviour
         zonas.PlaceTowerInZone(zone, towerObj);
         zonas.ClearSelection();
         zonas.IluminarTodas(false);
+        
+        // Limpiar preview y estado
+        isPlacingTower = false;
+        towerPreview.ClearPreview();
 
         return true;
+    }
+    
+    /// <summary>
+    /// Cancela el proceso de construcción actual.
+    /// </summary>
+    public void CancelarConstruccion()
+    {
+        isPlacingTower = false;
+        towerPreview.ClearPreview();
+        ZonasConstruccion.Instance.IluminarTodas(false);
+        ZonasConstruccion.Instance.ClearSelection();
+    }
+    
+    /// <summary>
+    /// Indica si actualmente se está en proceso de colocar una torre.
+    /// </summary>
+    public bool EstaColocandoTorre() => isPlacingTower;
+    
+    /// <summary>
+    /// Obtiene el tipo de torre actualmente seleccionado.
+    /// </summary>
+    public TorreTipo GetSelectedType() => seleccionActual;
+    
+    /// <summary>
+    /// Actualiza la posición del preview (llamado desde el sistema de input).
+    /// </summary>
+    public void ActualizarPreview(Vector3 posicion, bool esValido)
+    {
+        if (isPlacingTower && towerPreview.HasPreview)
+        {
+            towerPreview.UpdatePreviewPosition(posicion, esValido);
+        }
     }
 }

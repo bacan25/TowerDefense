@@ -16,6 +16,28 @@ public class PlayerShooting : MonoBehaviour
     public Animator anim;
 
     public AudioSource sfx;
+    
+    [Header("Secondary Fire")]
+    private SecondaryFireSystem secondaryFire;
+    
+    void Start()
+    {
+        // Buscar o crear sistema de disparo secundario
+        secondaryFire = GetComponent<SecondaryFireSystem>();
+        if (secondaryFire == null)
+        {
+            secondaryFire = gameObject.AddComponent<SecondaryFireSystem>();
+        }
+    }
+    
+    void Update()
+    {
+        // Manejar input del disparo secundario
+        if (Input.GetMouseButtonDown(1)) // Click derecho
+        {
+            SecondaryShootButtonPressed();
+        }
+    }
 
     public void ShootButtonPressed()
     {
@@ -44,5 +66,13 @@ public class PlayerShooting : MonoBehaviour
     void ResetAttck()
     {
         canAttack = true;
+    }
+    
+    public void SecondaryShootButtonPressed()
+    {
+        if (secondaryFire != null && secondaryFire.EstaDisponible())
+        {
+            secondaryFire.IntentarDisparoSecundario();
+        }
     }
 }

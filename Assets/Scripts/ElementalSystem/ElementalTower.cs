@@ -24,8 +24,8 @@ namespace ElementalSystem
         
         // Cache de stats originales
         private float rangoOriginal;
-        private float fireRateOriginal;
-        private float dañoOriginal;
+        private float tiempoDisparoOriginal;
+        private int dañoOriginal;
         
         void Awake()
         {
@@ -36,8 +36,8 @@ namespace ElementalSystem
             {
                 // Guardar stats originales
                 rangoOriginal = torreBase.rango;
-                fireRateOriginal = torreBase.fireRate;
-                // dañoOriginal se obtendría del sistema de balas
+                tiempoDisparoOriginal = torreBase.tiempoDisparo;
+                dañoOriginal = torreBase.daño;
             }
         }
         
@@ -110,7 +110,8 @@ namespace ElementalSystem
             if (torreBase != null)
             {
                 torreBase.rango = rangoOriginal;
-                torreBase.fireRate = fireRateOriginal;
+                torreBase.tiempoDisparo = tiempoDisparoOriginal;
+                torreBase.daño = dañoOriginal;
             }
             
             // Limpiar efectos visuales
@@ -127,10 +128,10 @@ namespace ElementalSystem
             
             // Aplicar modificadores de stats
             torreBase.rango = rangoOriginal * mejora.multiplicadorRango;
-            torreBase.fireRate = fireRateOriginal / mejora.multiplicadorVelocidad; // Menor fireRate = más rápido
+            torreBase.tiempoDisparo = tiempoDisparoOriginal / mejora.multiplicadorVelocidad; // Menor tiempo = más rápido
+            torreBase.daño = Mathf.RoundToInt(dañoOriginal * mejora.multiplicadorDaño);
             
-            // El daño se aplicaría a través del sistema de balas
-            // Aquí podrías notificar al BulletPool o modificar las balas al dispararlas
+            // Los efectos adicionales se aplicarían a través del sistema de balas
         }
         
         /// <summary>

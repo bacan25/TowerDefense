@@ -45,7 +45,7 @@ namespace Player
             duracionStun = stunDuration;
             
             // Iniciar movimiento
-            rb.velocity = transform.forward * velocidad;
+            rb.linearVelocity = transform.forward * velocidad;
             
             // Destruir después de tiempo de vida
             Destroy(gameObject, tiempoVida);

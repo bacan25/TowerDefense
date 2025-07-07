@@ -61,7 +61,7 @@ namespace Player
             enemigosMaximos = maxEnemigos;
             
             // Iniciar movimiento
-            rb.velocity = transform.forward * velocidad;
+            rb.linearVelocity = transform.forward * velocidad;
             
             // Destruir después de tiempo de vida
             Destroy(gameObject, tiempoVida);
@@ -113,11 +113,11 @@ namespace Player
         
         private void CrearEfectoAtraveser(Vector3 posicion)
         {
-            // Crear anillo de energía
-            GameObject anillo = GameObject.CreatePrimitive(PrimitiveType.Torus);
+            // Crear anillo de energía usando un cilindro aplanado
+            GameObject anillo = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
             anillo.transform.position = posicion;
             anillo.transform.rotation = transform.rotation;
-            anillo.transform.localScale = Vector3.one * 0.5f;
+            anillo.transform.localScale = new Vector3(1f, 0.1f, 1f); // Aplanar para simular anillo
             
             // Quitar collider
             Destroy(anillo.GetComponent<Collider>());

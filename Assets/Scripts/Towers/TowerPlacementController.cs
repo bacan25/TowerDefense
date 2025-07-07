@@ -135,10 +135,14 @@ public class TowerPlacementController : MonoBehaviour
         if (towerManager.ColocarTorreSeleccionada())
         {
             // Reproducir sonido de construcción
-            var hudController = FindObjectOfType<HUDController_Iso>();
-            if (hudController != null && hudController.construccion != null)
+            var audioSources = FindObjectsOfType<AudioSource>();
+            foreach (var audio in audioSources)
             {
-                hudController.construccion.Play();
+                if (audio.gameObject.name.Contains("Construccion") || audio.gameObject.name.Contains("Build"))
+                {
+                    audio.Play();
+                    break;
+                }
             }
             
             // Limpiar estado

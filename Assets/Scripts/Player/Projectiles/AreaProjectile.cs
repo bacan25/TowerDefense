@@ -46,7 +46,7 @@ namespace Player
             radioExplosion = radius;
             
             // Iniciar movimiento
-            rb.velocity = transform.forward * velocidad;
+            rb.linearVelocity = transform.forward * velocidad;
             
             // Destruir después de tiempo de vida
             Destroy(gameObject, tiempoVida);
@@ -69,7 +69,7 @@ namespace Player
             haExplotado = true;
             
             // Detener movimiento
-            rb.velocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
             
             // Ocultar modelo
             if (modeloProyectil != null)

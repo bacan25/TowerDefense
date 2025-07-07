@@ -127,7 +127,7 @@ namespace ElementalSystem
                 dañoFinal *= mejora.multiplicadorDaño;
                 
                 // Probabilidad de crítico
-                if (Random.Range(0f, 1f) < mejora.probabilidadCritico)
+                if (UnityEngine.Random.Range(0f, 1f) < mejora.probabilidadCritico)
                 {
                     dañoFinal *= mejora.multiplicadorCritico;
                     OnCritico();

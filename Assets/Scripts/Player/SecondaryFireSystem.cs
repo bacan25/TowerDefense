@@ -45,16 +45,44 @@ namespace Player
         public static event System.Action<float> OnCooldownChanged;
         public static event System.Action<TipoDisparoSecundario> OnTipoDisparoChanged;
         
-        void Start()
+    void Start()
+    {
+        // Intentar encontrar firePoint si no está asignado
+        if (firePoint == null)
         {
-            if (firePoint == null)
+            // Buscar en el mismo GameObject
+            firePoint = transform.Find("FirePoint");
+            
+            // Si no lo encuentra, buscar en el padre (Player)
+            if (firePoint == null && transform.parent != null)
             {
-                Debug.LogError("SecondaryFireSystem: No se asignó firePoint!");
-                enabled = false;
+                firePoint = transform.parent.Find("CameraHolder/FPSCamera/FirePoint");
             }
             
-            OnTipoDisparoChanged?.Invoke(tipoActual);
+            // Si aún no lo encuentra, buscar en los hijos
+            if (firePoint == null)
+            {
+                Transform[] allChildren = GetComponentsInChildren<Transform>();
+                foreach (Transform child in allChildren)
+                {
+                    if (child.name.Contains("FirePoint") || child.name.Contains("firePoint"))
+                    {
+                        firePoint = child;
+                        break;
+                    }
+                }
+            }
+            
+            if (firePoint == null)
+            {
+                Debug.LogError("SecondaryFireSystem: No se pudo encontrar FirePoint automáticamente!");
+                enabled = false;
+                return;
+            }
         }
+        
+        OnTipoDisparoChanged?.Invoke(tipoActual);
+    }
         
         void Update()
         {

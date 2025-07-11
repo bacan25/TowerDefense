@@ -20933,11 +20933,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1671
+      value: 1503
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 177
+      value: 259
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -35476,7 +35476,19 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6021598223767165952, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
+      propertyPath: lookSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021598223767165952, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
+      propertyPath: aimDeadZone
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021598223767165952, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
       propertyPath: aimJoystick
+      value: 
+      objectReference: {fileID: 1779168128}
+    - target: {fileID: 6021598223767165952, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
+      propertyPath: fire1Joystick
       value: 
       objectReference: {fileID: 1779168128}
     - target: {fileID: 6021598223767165952, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}

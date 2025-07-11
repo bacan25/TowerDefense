@@ -116,8 +116,7 @@ public class HUDController_Iso : MonoBehaviour
 
         // Asegura que los botones de torre empiecen deshabilitados si no hay oro
         ActualizarBotonesConstruccion(GameManager.Instance.Oro);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        
     }
 
     private void ActualizarDinero(int oro)

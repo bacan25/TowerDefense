@@ -9,31 +9,49 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
 
     [Header("Mobile Input")]
-    public Joystick movementJoystick;
+    public FixedJoystick movementJoystick; // Joystick izquierdo
+    public FixedJoystick aimJoystick;      // Joystick derecho (solo para disparo)
     private float xRotation = 0f;
-    private Vector2 touchStart;
+
+    [SerializeField] private float aimDeadZone = 0.2f;
+    [SerializeField] private PlayerShooting shootingScript;
 
     void Update()
     {
+        // Movimiento con joystick izquierdo
         float horizontal = movementJoystick.Horizontal;
         float vertical = movementJoystick.Vertical;
 
         Vector3 direction = transform.right * horizontal + transform.forward * vertical;
         transform.position += direction * moveSpeed * Time.deltaTime;
 
-        if (Input.touchCount > 0 && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+        // --- CONTROL DE CÁMARA (por touch tradicional, como antes) ---
+        if (Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Moved)
+            foreach (Touch touch in Input.touches)
             {
-                Vector2 delta = touch.deltaPosition * lookSpeed * Time.deltaTime;
-                xRotation -= delta.y;
-                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+                if (!EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                {
+                    if (touch.phase == TouchPhase.Moved)
+                    {
+                        Vector2 delta = touch.deltaPosition * lookSpeed * Time.deltaTime;
 
-                cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-                transform.Rotate(Vector3.up * delta.x);
+                        xRotation -= delta.y;
+                        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+                        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+                        transform.Rotate(Vector3.up * delta.x);
+                    }
+                }
             }
+        }
+
+        // --- CONTROL DE DISPARO con aimJoystick ---
+        Vector2 aimInput = new Vector2(aimJoystick.Horizontal, aimJoystick.Vertical);
+
+        if (aimInput.magnitude > aimDeadZone)
+        {
+            shootingScript.ShootButtonPressed();
         }
     }
 }

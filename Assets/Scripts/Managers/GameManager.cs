@@ -54,8 +54,7 @@ public class GameManager : MonoBehaviour
         Oro = oroInicial;
         OnOroCambiado?.Invoke(Oro);
         IniciarPreparacion();
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        
     }
 
     /// <summary>
@@ -70,8 +69,7 @@ public class GameManager : MonoBehaviour
         CameraFPS.SetActive(false);
         UIManager.Instance.ShowIsoHUD();
         OnFaseConstruccionChanged?.Invoke(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        
     }
 
     /// <summary>
@@ -84,8 +82,7 @@ public class GameManager : MonoBehaviour
         fullBodyPrefab.SetActive(false);
         shootingScript.enabled = true;
         CameraFPS.SetActive(true);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        
 
         UIManager.Instance.ShowFPSHUD();
         OnFaseConstruccionChanged?.Invoke(false);

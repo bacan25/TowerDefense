@@ -6,8 +6,7 @@ public class ActivateDefeat : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        
 
         Invoke("ActivateDefeatCanvas",3f);
     }

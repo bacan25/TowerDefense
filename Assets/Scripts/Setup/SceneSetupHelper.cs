@@ -195,7 +195,12 @@ public class SceneSetupHelper : MonoBehaviour
     [ContextMenu("Crear Materiales de Preview")]
     public void CrearMaterialesPreview()
     {
-        // Crear carpeta si no existe
+        // Crear carpetas necesarias
+        if (!AssetDatabase.IsValidFolder("Assets/Materials"))
+        {
+            AssetDatabase.CreateFolder("Assets", "Materials");
+        }
+        
         string folderPath = "Assets/Materials/TowerPreview";
         if (!AssetDatabase.IsValidFolder(folderPath))
         {
@@ -205,7 +210,20 @@ public class SceneSetupHelper : MonoBehaviour
         // Material válido (verde transparente)
         if (validPreviewMaterial == null)
         {
-            Material validMat = new Material(Shader.Find("Standard"));
+            // Intentar usar shader URP primero, si no existe usar Standard
+            Shader shader = Shader.Find("Universal Render Pipeline/Lit");
+            if (shader == null)
+            {
+                shader = Shader.Find("Standard");
+            }
+            
+            if (shader == null)
+            {
+                Debug.LogError("No se encontró un shader compatible!");
+                return;
+            }
+            
+            Material validMat = new Material(shader);
             validMat.name = "TowerPreviewValid";
             validMat.SetFloat("_Mode", 3); // Transparent
             validMat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
@@ -225,7 +243,20 @@ public class SceneSetupHelper : MonoBehaviour
         // Material inválido (rojo transparente)
         if (invalidPreviewMaterial == null)
         {
-            Material invalidMat = new Material(Shader.Find("Standard"));
+            // Intentar usar shader URP primero, si no existe usar Standard
+            Shader shader = Shader.Find("Universal Render Pipeline/Lit");
+            if (shader == null)
+            {
+                shader = Shader.Find("Standard");
+            }
+            
+            if (shader == null)
+            {
+                Debug.LogError("No se encontró un shader compatible!");
+                return;
+            }
+            
+            Material invalidMat = new Material(shader);
             invalidMat.name = "TowerPreviewInvalid";
             invalidMat.SetFloat("_Mode", 3); // Transparent
             invalidMat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);

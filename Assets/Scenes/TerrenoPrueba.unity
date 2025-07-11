@@ -1710,7 +1710,7 @@ GameObject:
   - component: {fileID: 147244169}
   - component: {fileID: 147244168}
   - component: {fileID: 147244170}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2293,7 +2293,7 @@ GameObject:
   - component: {fileID: 161346678}
   - component: {fileID: 161346677}
   - component: {fileID: 161346679}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5199,7 +5199,7 @@ GameObject:
   - component: {fileID: 330701752}
   - component: {fileID: 330701751}
   - component: {fileID: 330701753}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5683,7 +5683,7 @@ GameObject:
   - component: {fileID: 357340755}
   - component: {fileID: 357340754}
   - component: {fileID: 357340756}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5889,93 +5889,213 @@ MonoBehaviour:
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 10
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 13
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 18
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 22
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 25
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 30
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   - prefabEnemigo: {fileID: 474825259339910810, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
     cantidad: 35
     intervalo: 1
+    porcentajeNormal: 40
+    porcentajeRapido: 20
+    porcentajeZigzag: 20
+    porcentajeTanque: 20
   spawnPoints:
   - {fileID: 152806412}
   enemiesContainer: {fileID: 744130191}
@@ -6848,7 +6968,7 @@ GameObject:
   - component: {fileID: 400412535}
   - component: {fileID: 400412534}
   - component: {fileID: 400412536}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8867,7 +8987,7 @@ GameObject:
   - component: {fileID: 491817393}
   - component: {fileID: 491817392}
   - component: {fileID: 491817394}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10517,7 +10637,7 @@ GameObject:
   - component: {fileID: 612964746}
   - component: {fileID: 612964745}
   - component: {fileID: 612964747}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10998,7 +11118,7 @@ GameObject:
   - component: {fileID: 632956697}
   - component: {fileID: 632956696}
   - component: {fileID: 632956698}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11883,7 +12003,7 @@ GameObject:
   - component: {fileID: 689266888}
   - component: {fileID: 689266887}
   - component: {fileID: 689266889}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12216,7 +12336,7 @@ GameObject:
   - component: {fileID: 708930401}
   - component: {fileID: 708930400}
   - component: {fileID: 708930402}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12991,7 +13111,7 @@ GameObject:
   - component: {fileID: 770312317}
   - component: {fileID: 770312316}
   - component: {fileID: 770312318}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17027,6 +17147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1012724499}
   - component: {fileID: 1012724498}
+  - component: {fileID: 1012724500}
   m_Layer: 0
   m_Name: TowerManager
   m_TagString: Untagged
@@ -17049,7 +17170,7 @@ MonoBehaviour:
   torres:
   - tipo: 0
     prefab: {fileID: 8289811032205022277, guid: 3d2a7da2aad965043a080b8999746917, type: 3}
-    costo: 100
+    costo: 1
     previewSprite: {fileID: 21300000, guid: c9a6a9e369de9c849a4ab56be842fc69, type: 3}
   - tipo: 1
     prefab: {fileID: 7055174364837695512, guid: be55fc65586ecd64e847956f69e3a2a7, type: 3}
@@ -17074,6 +17195,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1012724500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012724497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8881e6b8af26c0849b110bd56ce8581f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validPreviewMaterial: {fileID: 2100000, guid: 3f43a37fdfd37ea4288962b1f2a9acae, type: 2}
+  invalidPreviewMaterial: {fileID: 2100000, guid: f54486531ff536c4a9231157624e30b9, type: 2}
 --- !u!1001 &1013185679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17160,7 +17295,7 @@ GameObject:
   - component: {fileID: 1032710468}
   - component: {fileID: 1032710467}
   - component: {fileID: 1032710469}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17827,6 +17962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1077993745}
   - component: {fileID: 1077993746}
+  - component: {fileID: 1077993747}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -17866,6 +18002,18 @@ MonoBehaviour:
   CameraFPS: {fileID: 330585543}
   fullBodyPrefab: {fileID: 5520061505547745440}
   shootingScript: {fileID: 1116779900}
+--- !u!114 &1077993747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077993744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d93ef41dd1f8e044a3e79d014e21c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1084322190
 GameObject:
   m_ObjectHideFlags: 0
@@ -18509,6 +18657,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1116779905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116779898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7f8ceb4eaa3da4daa5adc9ccec39bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoActual: 0
+  cooldownSecundario: 5
+  firePoint: {fileID: 0}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  proyectilRalentizacion: {fileID: 0}
+  proyectilStun: {fileID: 0}
+  proyectilArea: {fileID: 0}
+  proyectilPenetrante: {fileID: 0}
+  efectoCarga: {fileID: 0}
+  efectoDisparo: {fileID: 0}
+  audioSource: {fileID: 0}
+  sonidoCarga: {fileID: 0}
+  sonidoDisparo: {fileID: 0}
 --- !u!1001 &1127299884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18779,7 +18954,7 @@ GameObject:
   - component: {fileID: 1137455027}
   - component: {fileID: 1137455026}
   - component: {fileID: 1137455028}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21425,7 +21600,7 @@ GameObject:
   - component: {fileID: 1253609108}
   - component: {fileID: 1253609107}
   - component: {fileID: 1253609109}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22679,7 +22854,7 @@ GameObject:
   - component: {fileID: 1309440942}
   - component: {fileID: 1309440941}
   - component: {fileID: 1309440943}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23092,7 +23267,7 @@ MonoBehaviour:
   maxDistance: 500
   layerMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 63
 --- !u!120 &1352597519
 LineRenderer:
   serializedVersion: 2
@@ -24316,7 +24491,7 @@ GameObject:
   - component: {fileID: 1412811754}
   - component: {fileID: 1412811753}
   - component: {fileID: 1412811755}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27425,7 +27600,7 @@ GameObject:
   - component: {fileID: 1619323817}
   - component: {fileID: 1619323816}
   - component: {fileID: 1619323818}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28517,7 +28692,7 @@ GameObject:
   - component: {fileID: 1740643397}
   - component: {fileID: 1740643396}
   - component: {fileID: 1740643398}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29420,6 +29595,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779458261}
   m_Mesh: {fileID: -1839647502260767119, guid: 77b122b36d2802e41b550f3da7ca8b69, type: 3}
+--- !u!1 &1783595369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783595371}
+  - component: {fileID: 1783595370}
+  m_Layer: 0
+  m_Name: TowerPlacementController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1783595370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783595369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c274c814febeff34dbbb22f46c60b95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRaycastDistance: 100
+  constructionZoneLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  towerHeightOffset: 0.1
+--- !u!4 &1783595371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783595369}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1783715860
 GameObject:
   m_ObjectHideFlags: 0
@@ -33738,7 +33962,7 @@ GameObject:
   - component: {fileID: 2062335255}
   - component: {fileID: 2062335254}
   - component: {fileID: 2062335256}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34114,7 +34338,7 @@ GameObject:
   - component: {fileID: 2108716408}
   - component: {fileID: 2108716407}
   - component: {fileID: 2108716409}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lugar de torretas (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35284,6 +35508,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5848155974671611497, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1116779902}
+    - targetCorrespondingSourceObject: {fileID: 5848155974671611497, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1116779905}
   m_SourcePrefab: {fileID: 100100000, guid: f929370f5102f6f46881142fc56e8ea0, type: 3}
 --- !u!20 &5520061505547745439 stripped
 Camera:
@@ -35327,3 +35554,4 @@ SceneRoots:
   - {fileID: 403169751}
   - {fileID: 1985032117}
   - {fileID: 1904658002}
+  - {fileID: 1783595371}
